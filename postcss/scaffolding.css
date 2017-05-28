@@ -1,0 +1,13 @@
+:root {
+  box-sizing: border-box;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+input, textarea, keygen, select, button {
+  font-family: inherit;
+  font-size: inherit;
+}
