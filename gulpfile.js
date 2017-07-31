@@ -34,24 +34,24 @@ gulp.task("style", function() {
     .pipe(server.stream());
 });
 
-// gulp.task("images", function() {
-//   return gulp.src("build/img/**/*.{png,jpg,gif}")
-//     .pipe(imagemin([
-//       imagemin.optipng({optimizationLevel: 3}),
-//       imagemin.jpegtran({progressive: true})
-//     ]))
-//   .pipe(gulp.dest("build/img"));
-// });
+gulp.task("images", function() {
+  return gulp.src("build/img/**/*.{png,jpg,gif}")
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true})
+    ]))
+  .pipe(gulp.dest("build/img"));
+});
 
-// gulp.task("icons", function() {
-//   return gulp.src("build/img/icons/*.svg")
-//     .pipe(svgmin())
-//     .pipe(svgstore({
-//       inlineSvg: true
-//     }))
-//     .pipe(rename("sprite.svg"))
-//     .pipe(gulp.dest("build/img"));
-// });
+gulp.task("icons", function() {
+  return gulp.src("build/img/icons/*.svg")
+    .pipe(svgmin())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
+});
 
 gulp.task("build", function(fn) {
   run(

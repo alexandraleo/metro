@@ -1,0 +1,7 @@
+.page-body {
+  @mixin block;
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #555977;
+}
