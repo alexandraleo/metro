@@ -1,0 +1,12 @@
+.news {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+.news__item {
+  width: 45%;
+  flex-shrink: 0;
+  outline: 2px solid green;
+}
