@@ -2,11 +2,31 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-content: stretch;
+  align-items: stretch;
+  align-content: space-around;
   flex-wrap: wrap;
 }
 .news__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-wrap: wrap;
   width: 45%;
   flex-shrink: 0;
   outline: 2px solid green;
+  margin-bottom: 10px;
+}
+.news__date {
+  flex-basis: 50%;
+  order: 1;
+}
+.news__author {
+  margin-left: auto;
+  order: 2;
+}
+.news__list {
+  order: 3;
+  /*align-self: stretch;*/
+  flex-grow: 1;
 }
