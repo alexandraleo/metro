@@ -1,10 +1,23 @@
 .news {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.news__year-block {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
   align-content: space-around;
   flex-wrap: wrap;
+}
+.news__year-title {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  text-align: center;
 }
 .news__item {
   display: flex;
@@ -14,19 +27,28 @@
   flex-wrap: wrap;
   width: 45%;
   flex-shrink: 0;
-  outline: 2px solid green;
+  padding: 15px;
   margin-bottom: 10px;
+  background-color: $news-color;
+  box-shadow: 5px 5px 15px $main-color;
+  border-radius: 5px;
 }
 .news__date {
   flex-basis: 50%;
   order: 1;
+  font-weight: bold;
+  font-size: 20px;
+  color: $main-color;
 }
 .news__author {
   margin-left: auto;
   order: 2;
 }
 .news__list {
-  order: 3;
+  order: 4;
   /*align-self: stretch;*/
   flex-grow: 1;
+}
+.news__paragraph {
+  order: 3;
 }
