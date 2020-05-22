@@ -1,39 +1,30 @@
 {
   "name": "metro",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "description": "Remake metro.vpreterburge.ru",
-  "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "0.1.x",
-    "autoprefixer": "6.7.x",
-    "browser-sync": "2.18.8",
-    "css-mqpacker": "^5.0.1",
-    "del": "^2.2.2",
-    "gulp": "3.9.1",
-    "gulp-csso": "^3.0.0",
-    "gulp-imagemin": "^3.2.0",
-    "gulp-plumber": "1.1.0",
-    "gulp-postcss": "6.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-svgmin": "^1.2.3",
-    "gulp-svgstore": "^6.1.0",
-    "precss": "1.4.0",
-    "run-sequence": "^1.2.2"
-  },
+  "description": "Личный проект сайт Метро в Петербурге",
   "scripts": {
-    "test": "editorconfig-cli",
-    "build": "gulp build",
-    "start": "npm run build && gulp serve"
+    "build": "webpack",
+    "eslint": "eslint src/**/*.js",
+    "start": "webpack-dev-server --open",
+    "test": "npm run eslint"
   },
-  "editorconfig-cli": [
-    "*.html",
-    "*.json",
-    "*.js",
-    "js/**/*.js",
-    "img/**/*.svg",
-    "postcss/**/*.{css,pcss}"
-  ],
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "babel-loader": "8.1.0",
+    "eslint": "5.13.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.1.4"
+  },
   "engines": {
-    "node": "6.10"
+    "node": "10"
+  },
+  "dependencies": {
+    "chart.js": "2.8.0",
+    "chartjs-plugin-datalabels": "0.6.0",
+    "moment": "^2.24.0"
   }
 }
