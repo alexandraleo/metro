@@ -4,20 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Размышления о питерском метро</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page-body">
     <header class="page-header">
-      <navigation class="page-header__navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item"><a href="news.html" class="navigation__link">Новости</a></li>
-          <li class="navigation__item"><a href="" class="navigation__link"></a></li>
-          <li class="navigation__item"><a href="" class="navigation__link"></a></li>
-        </ul>
-      </navigation>
+      <nav class="page-header__navigation">
+      </nav>
     </header>
-    <main class="page-main">
-      <h1 class="page-main__header">Размышления о питерском метро</h1>
+    <main class="main">
+      <section class="hello-page">
+        <h1 class="page-main__header">Размышления о питерском метро</h1>
       <blockquote class="blockquote page-main__blockquote">
         "...Точное и неукоснительное соблюдение настоящих Правил обеспечивает слаженность всех звеньев метрополитена, чёткую и бесперебойную их работу и безопасность движения..."
         <footer class="blockquote__footer">
@@ -31,7 +27,14 @@
 
         <p class="page-main__paragraph">Внимание! Данный сайт не имеет никакого отношения к ГУП «Петербургский Метрополитен» и ОАО «Метрострой». Это сайт о вымышленном метро в вымышленном городе.</p>
 
-        <p class="page-main__paragraph">PS : Исправления и дополнения весьма приветствуются. Если вы нашли ошибку в тексте, выделяйте её мышкой и нажимайте Ctrl+Enter.</p>
+        <!-- <p class="page-main__paragraph">PS : Исправления и дополнения весьма приветствуются. Если вы нашли ошибку в тексте, выделяйте её мышкой и нажимайте Ctrl+Enter.</p> -->
+      </section>
+      <section class="news-page visually-hidden">
+        <section class="news-page__filter"></section>
+        <section class="news-page__timeline"></section>
+        <section class="news-page__board"></section>
+      </section>
     </main>
+    <script src="./bundle.js"></script>
   </body>
 </html>
