@@ -6,7 +6,7 @@ node_js:
   cache: npm
 
 script:
-  -npm run build
+  - npm run build
 
   deploy:
   provider: pages
