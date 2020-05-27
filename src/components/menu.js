@@ -19,11 +19,11 @@ export default class Menu extends Component {
   set onNewsButtonClick(fn) {
     this._onNewsButtonClick = fn;
   }
-  _onNewsButtonClick() {
-    if (typeof this._onNewsButtonClick === `function`) {
-      console.log(`News`);
-    }
-  }
+  // _onNewsButtonClick() {
+  //   if (typeof this._onNewsButtonClick === `function`) {
+  //     console.log(`News`);
+  //   }
+  // }
 
   getTemplate() {
     return `<ul class="navigation-list">
