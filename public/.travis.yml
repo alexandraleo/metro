@@ -1,4 +1,22 @@
-language: ruby
-rbm:
-  - 2.2
-  - jruby
+language: node_js
+
+node_js:
+  - 11
+
+cache: npm
+
+install:
+  - npm ci
+script:
+  -npm run build
+
+notifications:
+  email: false
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: gh-pages
