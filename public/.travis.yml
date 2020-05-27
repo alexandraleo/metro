@@ -1,0 +1,4 @@
+language: ruby
+rbm:
+  - 2.2
+  - jruby
