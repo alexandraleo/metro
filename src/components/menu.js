@@ -14,7 +14,7 @@ const MENU_LIST = [
 export default class Menu extends Component {
   constructor() {
     super();
-    this._onNewsButtonClick = this._onNewsButtonClick.bind(this);
+    // this._onNewsButtonClick = this._onNewsButtonClick.bind(this);
   }
   set onNewsButtonClick(fn) {
     this._onNewsButtonClick = fn;
@@ -31,7 +31,7 @@ export default class Menu extends Component {
     </ul>`;
   }
 
-  bind() {
-    this._element.querySelector(`.navigation-list--news`).addEventListener(`click`, this._onNewsButtonClick);
-  }
+  // bind() {
+  //   this._element.querySelector(`.navigation-list--news`).addEventListener(`click`, this._onNewsButtonClick);
+  // }
 }
