@@ -2,9 +2,8 @@ language: node_js
 
 node_js:
   - "stable"
-  - 10
 
-cache: npm
+  cache: npm
 
 script:
   - npm run build
@@ -14,7 +13,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: build
+  local_dir: /build
   target_branch: gh-pages
   on:
     branch: master
