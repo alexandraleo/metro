@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "stable"
+
+cache: npm
+
+script:
+  - npm run build
+branches:
+  only:
+    - master
+deploy:
+  strategy: git
+  provider: pages
+  cleanup: true
+  token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
