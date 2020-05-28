@@ -7,13 +7,15 @@ cache: npm
 
 script:
   - npm run build
-
+branches:
+  only:
+    - master
 deploy:
   strategy: git
   provider: pages
   cleanup: true
   token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: build
+  local_dir: metro/build
   on:
     branch: master
