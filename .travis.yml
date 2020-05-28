@@ -16,6 +16,5 @@ deploy:
   cleanup: true
   token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: metro/build
   on:
     branch: master
