@@ -27,7 +27,7 @@ export default class Menu extends Component {
 
   getTemplate() {
     return `<ul class="navigation-list">
-    ${MENU_LIST.map((item) => (`<li><a href="#" class="navigation-list--${Object.keys(item)}">${Object.values(item)}</a></li>`.trim())).join(``)}
+    ${MENU_LIST.map((item) => (`<li><a href="${Object.keys(item)}.html" class="navigation-list--${Object.keys(item)}">${Object.values(item)}</a></li>`.trim())).join(``)}
     </ul>`;
   }
 
