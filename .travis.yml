@@ -13,7 +13,6 @@ branches:
 deploy:
   strategy: git
   provider: pages
-  cleanup: true
   token: $GITHUB_TOKEN
   keep_history: true
   local_dir: public
