@@ -19,7 +19,7 @@ export default class Filter extends Component {
   }
   getTemplate() {
     return `<ul class="filter-list">
-    ${Array.from(filterNames).map((name) => (`<a href="#"><li>${name}</li></a>`.trim())).join(``)}<li></li>
+    ${Array.from(filterNames).map((name) => (`<li><a href="#">${name}</a></li>`.trim())).join(``)}<li></li>
   </ul>`;
   }
 }
