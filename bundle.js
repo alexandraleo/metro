@@ -179,13 +179,53 @@ class Menu extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
 
   getTemplate() {
     return `<ul class="navigation-list">
-    ${MENU_LIST.map((item) => (`<li><a href="#" class="navigation-list--${Object.keys(item)}">${Object.values(item)}</a></li>`.trim())).join(``)}
+    ${MENU_LIST.map((item) => (`<li><a href="${Object.keys(item)}.html" class="navigation-list--${Object.keys(item)}">${Object.values(item)}</a></li>`.trim())).join(``)}
     </ul>`;
   }
 
   // bind() {
   //   this._element.querySelector(`.navigation-list--news`).addEventListener(`click`, this._onNewsButtonClick);
   // }
+}
+
+
+/***/ }),
+
+/***/ "./src/components/news-filter.js":
+/*!***************************************!*\
+  !*** ./src/components/news-filter.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Filter; });
+/* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
+
+
+const filterNames = [
+  `2020`,
+  `2019`,
+  `2018`,
+  `2017`,
+  `2016`,
+  `2015`,
+  `2014`,
+  `2019`
+];
+
+// TODO: переписать функцию получения имен фильтров.
+
+class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+  constructor() {
+    super();
+  }
+  getTemplate() {
+    return `<ul class="filter-list">
+    ${Array.from(filterNames).map((name) => (`<li><a href="#">${name}</a></li>`.trim())).join(``)}<li></li>
+  </ul>`;
+  }
 }
 
 
@@ -2413,8 +2453,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/menu.js */ "./src/components/menu.js");
 /* harmony import */ var _components_word_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/word.js */ "./src/components/word.js");
 /* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render.js */ "./src/render.js");
-/* harmony import */ var _data_news_data_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data/news-data.js */ "./src/data/news-data.js");
+/* harmony import */ var _components_news_filter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/news-filter.js */ "./src/components/news-filter.js");
+/* harmony import */ var _data_news_data_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data/news-data.js */ "./src/data/news-data.js");
 // import Hello from "./components/hello-page.js";
+
 
 
 
@@ -2423,6 +2465,7 @@ __webpack_require__.r(__webpack_exports__);
 // let helloNode = document.querySelector(`.hello-page`);
 let menuNode = document.querySelector(`.page-header__navigation`);
 let newsNode = document.querySelector(`.news-page__board`);
+let filterNode = document.querySelector(`.news-page__filter`);
 
 const renderMenu = () => {
   const menuElement = new _components_menu_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
@@ -2433,15 +2476,19 @@ const renderMenu = () => {
 //   render(helloNode, helloElement, RenderPosition.BEFOREEND);
 // };
 const renderNews = () => {
-  for (let oneWord of _data_news_data_js__WEBPACK_IMPORTED_MODULE_3__["news"]) {
+  for (let oneWord of _data_news_data_js__WEBPACK_IMPORTED_MODULE_4__["news"]) {
     const wordElement = new _components_word_js__WEBPACK_IMPORTED_MODULE_1__["default"](oneWord);
     Object(_render_js__WEBPACK_IMPORTED_MODULE_2__["render"])(newsNode, wordElement, _render_js__WEBPACK_IMPORTED_MODULE_2__["RenderPosition"].AFTERBEGIN);
   }
 };
+const renderNewsFilter = () => {
+  const newsFilter = new _components_news_filter_js__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  Object(_render_js__WEBPACK_IMPORTED_MODULE_2__["render"])(filterNode, newsFilter, _render_js__WEBPACK_IMPORTED_MODULE_2__["RenderPosition"].AFTERBEGIN);
+};
 // renderHelloPage();
 renderMenu();
 renderNews();
-console.log(document.querySelector(`.navigation-list--news`));
+renderNewsFilter();
 
 
 /***/ }),
