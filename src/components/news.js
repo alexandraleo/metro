@@ -1,9 +1,12 @@
 import Component from "../component.js";
 
 export default class News extends Component {
-  getTemplate() {
-    return (
-      `<div class="news-cards"></div>`
-    );
+  constructor() {
+    super();
+
   }
+  getTemplate() {
+    return `<section class="news-page__board"></section>`;
+  }
+
 }

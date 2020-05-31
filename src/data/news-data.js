@@ -1,6 +1,6 @@
 export let news = [
   {
-    date: `20 января 2017 года`,
+    date: `20 января 2017`,
     text: [`Добавлены фотографии строящейся станции <a href="http://metro.vpeterburge.ru/stations/3/krest1/">Новокрестовская</a>.`]
   },
   {
