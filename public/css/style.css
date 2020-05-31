@@ -211,7 +211,7 @@ padding-right: 20px;*/
   align-content: stretch;
   flex-wrap: wrap;
   /* width: 45%; */
-  flex-basis: 49%;
+  flex-basis: 33%;
   /* flex-grow: 1; */
   flex-shrink: 0;
   padding: 15px;
@@ -258,6 +258,32 @@ padding-right: 20px;*/
    width: 17%;
    border-radius: 5px;
    max-height: 80vh;
+ }
+ .filter-list {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-content: stretch;
+   list-style: none;
+   padding: 0px;
+   border: solid 5px white;
+ }
+ .filter-list li {
+   display: flex;
+   justify-content: center;
+   font-size: 25px;
+   line-height: 40px;
+ }
+ .filter-list li {
+   border-top: solid 2px #555977;
+   border-bottom: solid 2px #555977;
+ }
+
+.filter-list a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
  }
 @media (min-width: 768px) {
   .page-main {

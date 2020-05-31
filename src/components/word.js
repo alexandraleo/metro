@@ -18,4 +18,8 @@ export default class Word extends Component {
     <span class="news__author">${this._wordAuthor}</span>
   </div>`;
   }
+
+  // getFilterNames() {
+
+  // }
 }
