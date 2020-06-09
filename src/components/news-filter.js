@@ -1,42 +1,48 @@
 import Component from "../component.js";
-
-// const filterNames = [
-//   `2020`,
-//   `2019`,
-//   `2018`,
-//   `2017`,
-//   `2016`,
-//   `2015`,
-//   `2014`,
-//   `2019`
-// ];
-
-// TODO: переписать функцию получения имен фильтров.
-
+import {replace} from "../render.js";
 export class Filter extends Component {
-  constructor(news) {
+  constructor(data) {
     super();
-    this._filterNames = this.getFilternames(news);
+    this._filterName = data;
+    this._href = data;
+    this._quantity = data.quantity;
+    this._onFilterClick = this._onFilterClick.bind(this);
   }
 
-  getTemplate() {
-    return `<ul class="filter-list">
-    ${this._filterNames.map((name) => (`<li><a href="#">${name}</a></li>`.trim())).join(``)}
-  </ul>`;
+  set onFilter(fn) {
+    this._onFilter = fn;
   }
 
-  getFilternames(news) {
-    let arr = [];
-    for (let word of news) {
-      Object.entries(word).forEach(([key, value]) => {
-        if (key === `date` && !arr.includes(value.substr(-4, 4))) {
-          arr.push(value.substr(-4, 4));
-        }
-      });
+  _onFilterClick() {
+    const activeFilter = document.querySelector(`.filter-list__item--active`);
+    if (activeFilter) {
+      this._isActive = false;
+      activeFilter.classList.remove(`.filter-list__item--active`);
     }
-    arr.sort((a, b) => {
-      return b - a;
-    });
-    return arr;
+    this._isActive = !this._isActive;
+    this.unbind();
+    this._iactiveFilterUpdate();
+    this.bind();
+    return typeof this._onFilter === `function` && this._onFilter();
   }
+
+  _activeFilterUpdate() {
+    replace(this.getTemplate(), this._element);
+  }
+
+  bind() {
+    this._element.addEventListener(`click`, this._onFilterClick);
+  }
+
+  unbind() {
+    this._element.removeEventListener(`click`, this._onFilterClick);
+  }
+
+  update(newQuantity) {
+    this._quantity = newQuantity;
+  }
+  getTemplate() {
+    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год</a></li>`;
+  }
+  // <span class="filter-list__item-count">${this._quantity}</span>
 }
