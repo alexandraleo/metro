@@ -281,9 +281,16 @@ padding-right: 20px;*/
  }
 
 .filter-list a {
-  width: 100%;
+  width: 90%;
   text-align: center;
   text-decoration: none;
+ }
+ .filter-list__item--active {
+   background-color: #555977;
+   color: #fff;
+ }
+ .filter-list__item-count {
+  width: 10%;
  }
 @media (min-width: 768px) {
   .page-main {

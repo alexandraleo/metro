@@ -1,9 +1,11 @@
 export let news = [
   {
+    year: `2017`,
     date: `20 января 2017`,
     text: [`Добавлены фотографии строящейся станции <a href="http://metro.vpeterburge.ru/stations/3/krest1/">Новокрестовская</a>.`]
   },
   {
+    year: `2012`,
     date: `31 декабря 2012`,
     text: [
       `Добавлены ПРЕДВАРИТЕЛЬНЫЕ фотографии станции «<a href="http://metro.vpeterburge.ru/stations/5/buhar/">Бухарестская</a>». В январе 2013 года они будут заменены.`],
@@ -11,18 +13,21 @@ export let news = [
   },
 
   {
+    year: `2012`,
     date: `30 декабря 2012`,
     text: [`Добавлен проект станции «<a href="http://metro.vpeterburge.ru/stations/5/slavy/">Проспект Славы</a>». Обновлено описание станции.`
     ],
     author: `djtonik`,
   },
   {
+    year: `2012`,
     date: `25 декабря 2012`,
     text: [`Cущественным образом дополнена информация о вагонах мод.<a href="http://metro.vpeterburge.ru/wagons/714_5p/">81-717.5П и 81-714.5П</a>, производства ОЭВРЗ`],
     author: `Nomernoy`,
   },
 
   {
+    year: `2012`,
     date: `23 декабря 2012`,
     text: [
       `Обновлены картинки-схемы линий 3, 4 и 5.`
@@ -31,6 +36,7 @@ export let news = [
   },
 
   {
+    year: `2012`,
     date: `18 декабря 2012`,
     text: [
       `Добавлены типы планируемых станций «Шкиперская», «Зоопарк», «Шуваловский проспект».`
@@ -39,6 +45,7 @@ export let news = [
   },
 
   {
+    year: `2012`,
     date: `24 марта 2012`,
     text: [
       `В статью о вагонах типа <a href="http://metro.vpeterburge.ru/wagons/d/">Д</a> добавлена интересная информация о поезде-пылесосе, находившегося в опытной эксплуатации в Ленинградском метрополитене в 1980-х годах.`,
@@ -48,6 +55,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2012`,
     date: `15 января 2012`,
     text: [
       `Поправил все ошибки, скопившиеся в Орфусе за несколько месяцев. Прошу прощения у авторов, так долго ждавших исправления найденных опечаток.`
@@ -55,12 +63,14 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2012`,
     date: `3 января 2012`,
     text: [`Администрация сайта поздравляет всех с Новым Годом!`,
       `В связи с каникулами сайт постепенно приводится в порядок, исправляются описания, перспективы развития итд.`],
     author: `djtonik`
   },
   {
+    year: `2011`,
     date: `28 декабря 2011`,
     text: [
       `Поздравляем жителей Санкт-Петербурга с открытием новой станции «<a href="http://www.metro.vpeterburge.ru/stations/5/adm/">Адмиралтейская-1</a>».`
@@ -68,6 +78,7 @@ export let news = [
   },
 
   {
+    year: `2011`,
     date: `22 октября 2011`,
     text: [
       `Схема путевого развития 5.35 (векторный вариант, афроамериканский фон) добавлена на сайт в раздел «<a href="http://metro.vpeterburge.ru/tvor/files/">Файлы</a>». Впоследствии параллельно будут выкладываться два варианта фона.`
@@ -75,6 +86,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `12 октября 2011`,
     text: [
       `Добавлены новые фотографии вагонов моделей <a href="http://metro.vpeterburge.ru/wagons/neva/photo_neva/">81-556/557/558 НеВа</a> и <a href="http://metro.vpeterburge.ru/wagons/Boing/photo_boing/">81-540.1/541.1</a>.`,
@@ -83,6 +95,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `25 сентября 2011`,
     text: [
       `Добавлены архитекторы всех станций первой очереди <a href="http://metro.vpeterburge.ru/stations/kalinin/">Красносельско-Калининской линии</a>.`,
@@ -92,6 +105,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `23 сентября 2011`,
     text: [
       `Добавлены рендеры станций «<a href="http://metro.vpeterburge.ru/stations/5/buhar/">Бухарестская</a>» и «<a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/">Международная</a>».`,
@@ -100,6 +114,7 @@ export let news = [
     author: `Nomernoy и djtonik`,
   },
   {
+    year: `2011`,
     date: `22 сентября 2011`,
     text: [
       `Добавлены рендеры станций Красносельско-калининской линии.`
@@ -108,6 +123,7 @@ export let news = [
   },
 
   {
+    year: `2011`,
     date: `19 июля 2011`,
     text: [
       `Обновлена информация по вагонам модели <a href="http://metro.vpeterburge.ru/wagons/neva/">81-556/557/558 НеВа</a> и добавлена 1 новая <a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/">фотография</a>.`
@@ -115,6 +131,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `17 июля 2011`,
     text: [
       `Обновлена схема на <a href="http://metro.vpeterburge.ru/">главной странице сайта</a> (она, как и раньше, масштабируется). В ближайшие дни будет обновлена перспективная схема метрополитена.`
@@ -122,6 +139,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `12 июля 2011`,
     text: [
       `Создана страница проектируемой станции «<a href="http://metro.vpeterburge.ru/stations/3/novok1/">Новокрестовская-1</a>». Обновлены картинки на странице 3-й и 4-й линий. (Нажмите ф5, если картинки старые).`
@@ -129,6 +147,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `6 июля 2011`,
     text: [
       `В связи с закрытием в 2012 году трёх станций метро на ремонт, актуализирована информация на этот год в разделе «<a href="http://metro.vpeterburge.ru/construct/">Перспективы</a>».`
@@ -136,6 +155,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `27 июня 2011`,
     text: [
       `Добавлена схема выходов cтанций «<a href="http://metro.vpeterburge.ru/stations/kalinin/bro/">Броневая</a>» и «<a href="http://metro.vpeterburge.ru/stations/kalinin/bor/">Боровая</a>».`,
@@ -144,6 +164,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `25 июня 2011`,
     text: [
       `Добавлена схема выходов пересадочного узла «<a href="http://metro.vpeterburge.ru/stations/kalinin/cher/">Черниговская — Московские ворота</a>».`,
@@ -153,6 +174,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `24 июня 2011`,
     text: [
       `Добавлен эскиз станции «<a href="http://metro.vpeterburge.ru/stations/kalinin/cher/">Черниговская</a>».`,
@@ -161,6 +183,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `18 июня 2011`,
     text: [
       `Добавлена информация по вестибюлю станции «<a href="http://metro.vpeterburge.ru/stations/kalinin/lig2/">Лиговский проспект-2</a>». Большое спасибо форумчанину с ником <a href="http://metro.nwd.ru/memberlist.php?mode=viewprofile&u=411">слон</a> за чертёж расположения станции.`
@@ -168,6 +191,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `13 июня 2011`,
     text: [
       `Полностью переписана информация о <a href="http://metro.vpeterburge.ru/stations/kalinin/">Красносельско-Калининской (6) линии</a>. Исправлена карта расположения станций ККЛ.`
@@ -175,6 +199,7 @@ export let news = [
     author: `djtonik и Nomernoy`,
   },
   {
+    year: `2011`,
     date: `9 июня 2011`,
     text: [
       `В фотоальбомы строящихся станций «<a href="http://metro.vpeterburge.ru/stations/5/buhar/">Бухаресткая</a>» и «<a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/">Международная</a>» добавлены общеизвестные рендеры архитектурной отделки`,
@@ -183,6 +208,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `26 мая 2011`,
     text: [
       `В <a href="http://www.metro.vpeterburge.ru/tvor/files/">коллекцию</a> схем метрополитена добавлена <a href="http://www.metro.vpeterburge.ru/data/files/schemes/tfs_white.jpg">схема развития до 2020 года по мнению студии tommy.felt</a> (данную
@@ -192,6 +218,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `10 мая 2011`,
     text: [
       `Выложено 6 рисунков — эскизов станции «<a href="http://metro.vpeterburge.ru/stations/kalinin/ok2/">Обводный Канал-2</a>». `
@@ -199,6 +226,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `4 мая 2011`,
     text: [
       `Актуализирована информация по станциям «<a href="http://metro.vpeterburge.ru/stations/kalinin/">Красносельско-Калининской линии</a>». `
@@ -206,6 +234,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `3 апреля 2011`,
     text: [
       `В раздел «<a href="http://metro.vpeterburge.ru/tvor/files/">Файлы</a>» добавлена <a href="http://metro.vpeterburge.ru/data/files/perspekt2011.png">перспективная схема метрополитена</a> (перевыложена 9 апреля 2011 года). Версия схемы является
@@ -219,6 +248,7 @@ export let news = [
     author: `djtonik & Nomernoy`,
   },
   {
+    year: `2011`,
     date: `25 марта 2011`,
     text: [
       `25 марта 2011 года осуществлена передача первых трех вагонов проекта НеВа в ГУП "Петербургский метрополитен". Пожелаем новым вагонам успешного прохождения полного цикла испытаний и скорейшего выхода
@@ -228,6 +258,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `15 марта 2011`,
     text: [
       `Добавлено <a href="http://metro.vpeterburge.ru/construct/789/">6 фотографий</a> выработок и законсервированных тоннелей будущей Кольцевой линии.`
@@ -235,6 +266,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `12 марта 2011`,
     text: [
       `Добавлена <a href="http://metro.vpeterburge.ru/data/lines/line1/chern_vosst/vosst_mayak_big.jpg">фотография</a> соединительной ветки «Площадь Восстания — Маяковская».`,
@@ -244,6 +276,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `20 февраля 2011`,
     text: [
       `Добавлено 3 фотографии тупика ст. «Ломоносовская», а так же <a href="http://metro.vpeterburge.ru/stations/3/">6 фотографий</a> заброшенных тоннелей на перегоне «Ломоносовская — Пролетарская».`,
@@ -253,6 +286,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `7 февраля 2011`,
     text: [
       `Обновлено <a href="http://metro.vpeterburge.ru/stations/3/">описание</a> заброшенных тоннелей на перегоне «Ломоносовская — Пролетарская».`
@@ -260,6 +294,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `5 февраля 2011`,
     text: [
       `Создана <a href="http://metro.vpeterburge.ru/stations/1/chernysh/photo_chern/">фотогалерея</a> станции <a href="http://metro.vpeterburge.ru/stations/1/chernysh/">"Чернышевская"</a> с 6-ю новыми фотографиями.`,
@@ -273,6 +308,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2011`,
     date: `30 января 2011`,
     text: [
       `Ремонт наклонного хода станции «<a href="http://www.metro.vpeterburge.ru/stations/2/petr/">Петроградская</a>» отменён. Подробнее можно прочитать <a href="http://community.livejournal.com/metro_piter/51968.html">здесь</a>.`
@@ -280,6 +316,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2011`,
     date: `26 января 2011`,
     text: [
       `В разделе <a href="http://metro.vpeterburge.ru/wagons/">ВАГОНЫ</a> создано 3 новых подраздела, посвященных опытным вагонам моделей <a href="http://metro.vpeterburge.ru/wagons/720/">ЭС-719/ЭС-720</a>, <a href="http://metro.vpeterburge.ru/wagons/720_1/">81-720.1/721.1</a> и экспортным вагонам модели <a href="http://metro.vpeterburge.ru/wagons/572_2/">81-572.2/573.2</a> с большим числом уникальных фотографий.`,
@@ -291,6 +328,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `18 декабря 2010`,
     text: [
       `В фотогалерею вагонов мод. <a href="http://metro.vpeterburge.ru/wagons/540_2/photo_540_2/">81-540.2/541.2</a> добавлена <a href="http://metro.vpeterburge.ru/data/wagons/540-2/10391_1.jpg">фотография</a> нового вагона мод. 81-540.2 №10391.`
@@ -298,6 +336,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `16 ноября 2010`,
 
     text: [
@@ -313,6 +352,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `10 октября 2010`,
     text: [
       `В связи с появлением технического задания на проектирование второй очереди Фрунзенского радиуса были подкорректированы описания соответствующих станций: «<a href="http://metro.vpeterburge.ru/stations/5/slavy/">Проспект Славы</a>», «<a href="http://metro.vpeterburge.ru/stations/5/dun/">Дунайский Проспект</a>»
@@ -321,6 +361,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `6 сентября 2010`,
     text: [
       `Появилась информация о закрытии на ремонт в 2011-2012 годах станции «Пушкинская».`
@@ -328,6 +369,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `19 июля 2010`,
     text: [
       `Дополнено описание станции «<a href="http://metro.vpeterburge.ru/stations/5/sport/">Спортивная</a>»`,
@@ -337,6 +379,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `4 июля 2010`,
     text: [
       `Добавлены фотографии вагонов моделей <a href="http://metro.vpeterburge.ru/wagons/540_2/photo_540_2/">81-540.2</a> и <a href="http://metro.vpeterburge.ru/wagons/540_8/photo_540_8/">81-540.8</a>.`,
@@ -346,6 +389,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `27 июня 2010`,
     text: [
       `Добавлено две фотографии станции «<a href="http://metro.vpeterburge.ru/stations/4/dostoev/">Достоевская</a>».`
@@ -353,6 +397,7 @@ export let news = [
     author: `Nomernoy и djtonik`,
   },
   {
+    year: `2010`,
     date: `25 июня 2010`,
     text: [
       `Обновлена хронология строительства станции «<a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/">Международная</a>», создана <a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/photo_mezhd/">фотогалерея</a> строительства станции.`,
@@ -362,6 +407,7 @@ export let news = [
     author: `Nomernoy и djtonik`,
   },
   {
+    year: `2010`,
     date: `22 июня 2010`,
     text: [
       `Дополнено описание станции «<a href="http://metro.vpeterburge.ru/stations/4/novoch/">Новочеркасская (Красногвардейская)</a>».`
@@ -369,6 +415,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `20 июня 2010`,
     text: [
       `На страничке вагонов типа <a href="http://metro.vpeterburge.ru/wagons/e/">Е</a> обновлено описание и добавлена новая фотография вагона типа Е <a href="http://metro.vpeterburge.ru/data/wagons/e/3507.jpg">№3507</a>.`,
@@ -377,6 +424,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `15 июня 2010`,
     text: [
       `Раздел "Тупики станций" переименован в «<a href="http://metro.vpeterburge.ru/objects/tup/">Тупики и оборотные тоннели</a>». Обновлено и дополнено описание.`,
@@ -386,6 +434,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `29 мая 2010`,
     text: [
       `Добавлены сведения по эксплуатационной длине и длине каждого перегона линии 4. Подробнее - на <a href="http://metro.vpeterburge.ru/stations/4/">страничке Правобережной линии</a>.`,
@@ -395,6 +444,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `20 мая 2010`,
     text: [
       `Добавлено <a href="http://metro.vpeterburge.ru/stations/1/kirza/">три фотографии</a> станции «Кировский Завод».`,
@@ -408,6 +458,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `19 мая 2010`,
     text: [
       `Добавлено <a href="http://metro.vpeterburge.ru/stations/2/">две фотографии</a> перегона «Московская - Звёздная».`,
@@ -416,6 +467,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `5 мая 2010`,
     text: [
       `Обновлено описание станции «<a href="http://metro.vpeterburge.ru/stations/2/kupchino/">Купчино</a>».`
@@ -423,6 +475,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `3 мая 2010`,
     text: [
       `Добавлено <a href="http://metro.vpeterburge.ru/stations/1/">10 фотографий</a> старых тоннелей перегона «Лесная - Площадь Мужества» (т.н. «Размыва»).`,
@@ -431,6 +484,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `28 апреля 2010`,
     text: [
       `В описание станции «<a href="http://metro.vpeterburge.ru/stations/2/petr/">Петроградская</a>» добавлен новый подраздел об изменениях, которые ее коснулись. Данный подраздел планируется ввести для каждой станции.`,
@@ -440,6 +494,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2010`,
     date: `27 апреля 2010`,
     text: [
       `Обновлено описание станции «<a href="http://metro.vpeterburge.ru/stations/1/pl_lenina/">Площадь Ленина</a>».`
@@ -447,6 +502,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `6 апреля 2010`,
     text: [`Появился аналог московского "Метроблога". Он был создан для оперативного появления новостей о Петербургском метрополитене, происшествиях и для ваших статей. Перейти на него вы можете по
  <a href="http://community.livejournal.com/metro_piter/">этой ссылке</a>, либо выбрав пункт «Блог» в верхнем меню.`,
@@ -455,6 +511,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `30 марта 2010`,
     text: [
       `На станции "Садовая" демонтировали, а затем в два раза сузили "изоленту" с путевой стены из-за неровности мрамора.`,
@@ -463,6 +520,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `26 марта 2010`,
     text: [
       `На станции «Обводный канал» начали вешать живопись на путевые стены.`,
@@ -471,6 +529,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2010`,
     date: `8 марта 2010`,
     text: [
       `Редакция сайта от всего сердца поздравляет работниц метро с праздником весны. Искренне желаем вам как можно больше солнца, ярких впечатлений и безаварийной работы.`,
@@ -479,6 +538,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2010`,
     date: `6 января 2010`,
     text: [
       `Созданы фотогалереи станций «<a href="http://metro.vpeterburge.ru/stations/2/cherrech/">Черная Речка</a>» и «<a href="http://metro.vpeterburge.ru/stations/2/pioneer/">Пионерская</a>».`
@@ -486,6 +546,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `5 января 2010`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/stations/5/zvenig/photo_zv/">фотогалерею</a> станции «<a href="http://metro.vpeterburge.ru/stations/5/zvenig/">Звенигородская</a>» добавлена 1 фотография.`
@@ -493,6 +554,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `4 января 2010`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/wagons/d/photo_d/">фотогалерею</a> раздела, посвящённого вагонам типа «<a href="http://metro.vpeterburge.ru/wagons/d/">Д</a>» добавлено 3 фотографии.`,
@@ -502,6 +564,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2010`,
     date: `3 января 2010`,
     text: [
       `Созданы подразделы, посвященные вагонам для казанского метрополитена моделей <a href="http://metro.vpeterburge.ru/wagons/553_3/">81-553.3/554.3/555.3</a> и вагонам <a href="http://metro.vpeterburge.ru/wagons/d/">типа Д</a>.`,
@@ -511,6 +574,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `26 декабря 2009`,
     text: [
       `Выложена предварительная версия новой <a href="http://metro.vpeterburge.ru/data/files/spb2009test.png">схемы метрополитена</a>. Принимаются ваши пожелания и дополнения к ней, поскольку работы ещё непочатый край.`
@@ -518,6 +582,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `25 декабря 2009`,
     text: [
       `Завтра открывают свои двери свежие вестибюли станций «<a href="http://metro.vpeterburge.ru/stations/5/zvenig/">Звенигородская</a>» и «<a href="http://metro.vpeterburge.ru/stations/2/gork/">Горьковская</a>».`,
@@ -527,6 +592,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `21 декабря 2009`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/stations/1/grazhd/photo_grazhd/">фотогалерею</a> станции "Гражданский Проспект" добавлено 4 новые фотографии.`,
@@ -535,6 +601,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `18 декабря 2009`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/stations/5/zvenig/photo_zv/">фотогалерею</a> станции "Звенигородская" добавлено 5 новых фотографий.`
@@ -542,6 +609,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `15 декабря 2009`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/stations/5/zvenig/photo_zv/">фотогалерею</a> станции "Звенигородская" добавлена <a href="http://metro.vpeterburge.ru/data/stations/line5/Zvenig/zve_zatvor.jpg">фотография</a> закрытого гермозатвора, отделяющего
@@ -550,6 +618,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `13 декабря 2009`,
     text: [
       `В <a href="http://metro.vpeterburge.ru/objects/depot/tch5/photo_tch5/">фотогалерею</a> депо <a href="http://metro.vpeterburge.ru/objects/depot/tch5/">ТЧ-5 "Невское"</a> были добавлены новые фотографии.`,
@@ -558,6 +627,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `9 декабря 2009`,
     text: [
       `В раздел <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a> добавлен новый подраздел, посвященный вагонам модели <a href="http://metro.vpeterburge.ru/wagons/714_5p/">81-714.5П</a>, также добавлено 4 новые фотографии вагонов <a href="http://metro.vpeterburge.ru/wagons/540_2/photo_540_2/">81-540.2</a> и <a href="http://metro.vpeterburge.ru/data/wagons/em/3782.jpg">фотография</a> вагона типа <a href="http://metro.vpeterburge.ru/wagons/em/">Ем</a>.`,
@@ -569,6 +639,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `25 ноября 2009`,
     text: [
       `В разделе, посвященном вагонам модели <a href="http://metro.vpeterburge.ru/wagons/neva/">81-556/557/558 Нева</a>, создана <a href="http://metro.vpeterburge.ru/wagons/neva/photo_neva/">фотогалерея</a>, куда были добавлены новые фотографии. Также
@@ -577,6 +648,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `23 ноября 2009`,
     text: [
       `Из-за обилия спама в гостевой книге пришлось перенести её на <a href="http://www.xbase.ru/index.php?metro">внешний ресурс</a>. Пока в виде эксперимента, но если идея приживётся, то там гостевая и останется`
@@ -584,6 +656,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `15 ноября 2009`,
     text: [
       `Новости в архивах перераспределены по годам.`
@@ -591,6 +664,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `12 ноября 2009`,
     text: [
       `Обновлены фотографии станций «<a href="http://www.metro.vpeterburge.ru/stations/2/moskov/">Московская</a>» и «<a href="http://www.metro.vpeterburge.ru/stations/2/udel/">Удельная</a>». Спасибо Никичу.`
@@ -598,6 +672,7 @@ export let news = [
     author: `Naisa и djtonik`,
   },
   {
+    year: `2009`,
     date: `10-11 ноября 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/tvor/files/">схема путевого развития</a> (Версия 4.70): отрисовано депо ТЧ-5 "Невское".`
@@ -605,6 +680,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `7 ноября 2009`,
     text: [
       `Добавлена фотография ВШ <a href="http://metro.vpeterburge.ru/data/objects/vsh/519b.jpg">519-бис</a> в раздел «<a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>». Теперь есть фотографии почти всех ВШ, не хватает всего
@@ -618,6 +694,7 @@ export let news = [
     author: `Naisa и djtonik`,
   },
   {
+    year: `2009`,
     date: `3 ноября 2009`,
     text: [
       `Добавлена фотография ВШ <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/413.jpg">413</a> в раздел «<a href="http://metro.vpeterburge.ru/objects/">Объекты</a>». Благодарю kot за фотографию. Спасибо в40 за предоставленную информацию по
@@ -626,6 +703,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `31 октября 2009`,
     text: [
       `Добавлены фотографии ВШ <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/511.jpg">511</a>, <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/525.jpg">525</a>, <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/616b.jpg">616-бис</a>,
@@ -635,6 +713,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `30 октября 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/tvor/files/">схема путевого развития</a> (Версия 4.55)`
@@ -642,6 +721,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `27 октября 2009`,
     text: [
       `В связи с уточнением данных по строительству Красносельско-Калининской (6) линии, обновлена <a href="http://metro.vpeterburge.ru/tvor/files/">схема путевого развития</a> (Версия 4.50)`
@@ -649,6 +729,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `25 октября 2009`,
     text: [
       `Добавлены фотографии ВШ <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/23.jpg">23</a>, <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/522.jpg">522</a>, <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/531.jpg">531</a>,
@@ -657,6 +738,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `24 октября 2009`,
     text: [
       `Добавлены фотографии ВШ <a href="http://metro.vpeterburge.ru/data/objects/vsh/409.jpg">№409</a>, <a href="http://metro.vpeterburge.ru/data/objects/vsh/414.jpg">414</a>, <a href="http://metro.vpeterburge.ru/data/objects/vsh/527.jpg">527</a> и
@@ -665,6 +747,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `22 октября 2009`,
     text: [
       `Добавлена <a href="http://metro.vpeterburge.ru/data/objects/vsh/407.jpg">фотография</a> в раздел «<a href="http://metro.vpeterburge.ru/objects/">Объекты</a>». Спасибо Роману Миронову за присланную фотографию.`
@@ -672,6 +755,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `20 октября 2009`,
     text: [
       `Добавлено стихотворение «<a href="http://metro.vpeterburge.ru/tvor/liric/stih/">Затихли поезда в ночном отстое...</a>» в раздел «<a href="http://metro.vpeterburge.ru/tvor/">Творчество</a>».`
@@ -679,6 +763,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `13 октября 2009`,
     text: [
       `Добавлена <a href="http://metro.vpeterburge.ru/data/files/XXI.PNG">схема</a> развития метрополитена в раздел «<a href="http://metro.vpeterburge.ru/tvor/files/">Файлы</a>».`
@@ -686,6 +771,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `12 октября 2009`,
     text: [
       `Добавлено стихотворение «<a href="http://metro.vpeterburge.ru/tvor/liric/pesenka/">Песенка метрофаната</a>» в раздел «<a href="http://metro.vpeterburge.ru/tvor/">Творчество</a>».`
@@ -693,6 +779,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `5 октября 2009`,
     text: [
       `Добавлено 3 фотографии на страничку станции «<a href="http://metro.vpeterburge.ru/stations/2/parnas/">Парнас</a>».`
@@ -700,6 +787,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `22 сентября 2009`,
     text: [
       `Добавлено 3 фотографии на страничку станции «<a href="http://metro.vpeterburge.ru/stations/2/cherrech/">Чёрная Речка</a>».`
@@ -707,6 +795,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `7 сентября 2009`,
     text: [
       `Создана <a href="http://metro.vpeterburge.ru/stations/4/dybenko/photo_dyb/">фотогалерея</a> станции «<a href="http://metro.vpeterburge.ru/stations/4/dybenko/">Улица Дыбенко</a>».`,
@@ -716,11 +805,13 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `4 сентября 2009`,
     text: [`С сегодняшнего дня любой желающий может осуществлять любительскую фотосъёмку в метрополитене БЕЗ применения вспышки.`],
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `19 августа 2009`,
     text: [
       ` Заменена картинка, информирующая об отсутствии фотографии ВШ в разделе «<a href="http://www.metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>» :) `
@@ -728,6 +819,7 @@ export let news = [
     author: `DinGer-№`,
   },
   {
+    year: `2009`,
     date: `4 августа 2009`,
     text: [
       `Добавлены фотографии ВШ 13, ВШ 411, ВШ 512, ВШ 530; обновлены фотографии ВШ А, ВШ 212 в разделе «<a href="http://www.metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>»`
@@ -735,6 +827,7 @@ export let news = [
     author: `DinGer-№`,
   },
   {
+    year: `2009`,
     date: `19 июля 2009`,
     text: [
       `Обновлено описание станции «<a href="http://metro.vpeterburge.ru/stations/5/mezhdunar/">Международная</a>».`
@@ -742,6 +835,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `9 июля 2009`,
     text: [
       `Существенно дополнена новыми фотографиями и эскизами <a href="http://metro.vpeterburge.ru/stations/5/adm/photo_adm/">фотогалерея</a> станции «<a href="http://metro.vpeterburge.ru/stations/5/adm/">Адмиралтейская</a>».`,
@@ -751,6 +845,7 @@ export let news = [
     author: `Nomernoy и djtonik`,
   },
   {
+    year: `2009`,
     date: `8 июля 2009`,
     text: [
       `Создана <a href="http://metro.vpeterburge.ru/stations/4/plan/photo_plan2/">фотогалерея</a> для станции <a href="http://metro.vpeterburge.ru/stations/4/plan/">Площадь Александра Невского-II</a> с большим количеством фотографий. Администрация сайта
@@ -761,6 +856,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `27 июня 2009`,
     text: [
       `Добавлен новый подраздел, посвященный вагонам модели <a href="http://metro.vpeterburge.ru/wagons/540_8/">81-540.8/541.8</a>`
@@ -768,6 +864,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `26 июня 2009`,
     text: [
       `Подкорректированы описания <a href="http://metro.vpeterburge.ru/objects/depot/tch3/">ТЧ-3 "Московское"</a>, <a href="http://metro.vpeterburge.ru/objects/depot/tch5/">ТЧ-5 "Невское"</a> и <a href="http://metro.vpeterburge.ru/objects/depot/tch6/">ТЧ-6 "Выборгское"</a>.
@@ -776,6 +873,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `25 июня 2009`,
     text: [
       `Добавлен новый подраздел, посвященный вагонам модели <a href="http://metro.vpeterburge.ru/wagons/540_7/">81-540.7/541.7</a>`,
@@ -785,6 +883,7 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `24 июня 2009`,
     text: [
       `Комитетом по транспорту признано незаконным взимание платы за осуществление фото и видеосъёмки в метрополитене. В скором времени обновлённые правила пользования метрополитеном вступят в силу.`,
@@ -793,6 +892,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `19 и 20 июня 2009`,
     text: [
       `Добавлена <a href="http://metro.vpeterburge.ru/stations/3/">фотография</a> перегона «Приморская»-«Стадион Кирова» (6 тупик станции «Приморская»)`,
@@ -805,6 +905,7 @@ export let news = [
     author: `djtonik`,
   },
   {
+    year: `2009`,
     date: `13 июня 2009`,
     text: [
       `Для повышения персональной ответственности редакции, в конце каждой новости значится ник редактора, подготовившего обновление сайта.`,
@@ -814,6 +915,7 @@ export let news = [
     author: `djtonik & Dinger-N`,
   },
   {
+    year: `2009`,
     date: `8 июня 2009`,
     text: [
       `Произошло объединение разделов «<a href="http://www.metro.vpeterburge.ru/foto/arch/">Архив</a>» и «<a href="http://www.metro.vpeterburge.ru/foto/photo/">Фото</a>» в раздел «<a href="http://www.metro.vpeterburge.ru/foto/">Фотографии</a>». Раздел
@@ -823,6 +925,7 @@ export let news = [
     author: `Naisa`,
   },
   {
+    year: `2009`,
     date: `4 июня 2009`,
     text: [
       `В связи со сложившейся ситуацией вокруг станции «<a href="http://metro.vpeterburge.ru/stations/2/gork/">Горьковская</a>», выложена информация по текущему состоянию ремонта и перспективам открытия станции.`,
@@ -834,6 +937,7 @@ export let news = [
     author: `djtonik & Naisa`,
   },
   {
+    year: `2009`,
     date: `3 июня 2009`,
     text: [
       `В раздел «<a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a>» добавлена фотография пульта вагона №<a href="http://metro.vpeterburge.ru/data/wagons/540-2/10335.jpg">10335</a> <a href="http://metro.vpeterburge.ru/wagons/540_2/">модели 81-540.2</a>.`
@@ -841,12 +945,14 @@ export let news = [
     author: `Nomernoy`,
   },
   {
+    year: `2009`,
     date: `31 мая 2009`,
     text: [
       `Небольшое обновление, касающееся дополнения информации по перегонам Кировско-Выборгской и Московско-Петроградской линий.`
     ],
   },
   {
+    year: `2009`,
     date: `17 мая 2009`,
     text: [
       `В раздел <a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a> добавлены фотографии <a href="http://metro.vpeterburge.ru/data/objects/vsh/400.jpg">ВШ 400</a>, <a href="http://metro.vpeterburge.ru/data/objects/vsh/524.jpg">ВШ 524</a>,
@@ -860,6 +966,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `16 мая 2009`,
     text: [
       `В связи с присвоением Топонимической Комиссией наименований двум проектируемым станциям, соответствующие изменения внесены на сайт. Станция "Народная" переименована в «<a href="http://metro.vpeterburge.ru/stations/4/narodnaya/">Кудрово</a>», а
@@ -868,6 +975,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `10 мая 2009`,
     text: [
       `Дорогие посетители сайта! Редакция от всей души поздравляет вас с Днём Победы в Великой Отечественной войне и желает мирного неба над головой, счастья и радости. Пускай никто из нас никогда не столкнётся
@@ -878,6 +986,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `9 мая 2009`,
     text: [
       `Добавлена фотография <a href="http://metro.vpeterburge.ru/data/objects/vsh/514.jpg">ВШ 514</a>`
@@ -885,6 +994,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `1 мая 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/tvor/files/">схема путевого развития</a> (Версия 4.35). Небольшие исправления коснулись Академической, Ломоносовской, Броневой, Южной и Петроградской.
@@ -893,6 +1003,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `28 апреля 2009`,
     text: [
       `В разделе <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a> был создан подраздел, посвященный вагонам модели <a href="http://metro.vpeterburge.ru/wagons/540_5/">81-540.5/541.5</a>. Администрация сайта выражает особую благодарность <b> ГрафЪ</b> за предоставленный фотоматериал.`
@@ -900,6 +1011,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `27 апреля 2009`,
     text: [
       `Обновлена фотография <a href="http://metro.vpeterburge.ru/data/objects/vsh/b.jpg">ВШ Б</a>.`,
@@ -909,6 +1021,7 @@ export let news = [
 
 
   {
+    year: `2009`,
     date: `20 апреля 2009`,
     text: [
       `Добавлена фотография <a href="http://metro.vpeterburge.ru/data/objects/vsh/206.jpg">ВШ 206</a>.`
@@ -916,6 +1029,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `18 апреля 2009`,
     text: [
       `Постепенно обновляется структура раздела "<a href="http://www.metro.vpeterburge.ru/objects/">Объекты</a>". Приносим извинения, если некоторые ссылки не будут работать корректно.`,
@@ -927,6 +1041,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `17 апреля 2009`,
     text: [
       `Добавлены фотографии <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/533_big.jpg">ВШ 533</a> и <a href="http://www.metro.vpeterburge.ru/data/objects/vsh/534_big.jpg">ВШ 534</a>. Спасибо Данилу Плахотниченко за присланные фотографии!
@@ -936,6 +1051,7 @@ export let news = [
 
 
   {
+    year: `2009`,
     date: `15 апреля 2009`,
     text: [
       `Добавлена фотография <a href="http://metro.vpeterburge.ru/data/objects/vsh/401.jpg">ВШ 401</a>.
@@ -944,6 +1060,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `11 апреля 2009`,
     text: [
       ` Достаточно большое обновление. Выложено значительное количество фотографий, а также информация по 6 линии`,
@@ -958,6 +1075,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `8 апреля 2009`,
     text: [
       `Обновлена структура раздела "<a href="http://www.metro.vpeterburge.ru/objects/">Объекты</a>"`
@@ -965,6 +1083,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `2 и 3 апреля 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/tvor/files/">схема путевого развития</a> (Версия 4.23)`],
@@ -972,6 +1091,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `1 апреля 2009`,
     text: [
       `В раздел <a href="http://www.metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a> были добавлены фотографии ВШ 306 и ВШ 415. Благодарим пользователей HCBS и kot за предоставленный материал.`
@@ -979,6 +1099,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `31 марта 2009`,
     text: [
       `В раздел <a href="http://www.metro.vpeterburge.ru/objects/depot/">Депо</a> было добавлено описание <a href="http://www.metro.vpeterburge.ru/objects/depot/tch7/">ТЧ-7 "Южное"</a>. Создана фотогалерея и добавлены фотографии <a href="http://www.metro.vpeterburge.ru/objects/depot/tch3/">ТЧ-3 "Московское"</a> и <a href="http://www.metro.vpeterburge.ru/objects/depot/tch1/">ТЧ-1 "Автово"</a>.`
@@ -986,6 +1107,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `30 марта 2009`,
     text: [
       `Обновлено описание, добавлены новые фотографии и создана фотогалерея <a href="http://www.metro.vpeterburge.ru/objects/depot/tch6/">ТЧ-6 "Выборгское"</a> и <a href="http://www.metro.vpeterburge.ru/objects/depot/tch4/">ТЧ-4 "Северное"</a>. На страничках
@@ -995,6 +1117,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `29 марта 2009`,
     text: [
       `Новый рисунок на главной странице</a> `,
@@ -1005,6 +1128,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `28 марта 2009`,
     text: [
       `Добавлена фотография и скорректировано описание станции "<a href="http://www.metro.vpeterburge.ru/stations/1/muzh/">Площадь Мужества</a>".
@@ -1013,6 +1137,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `27 марта 2009`,
     text: [
       `Добавлено описание станции "<a href="http://www.metro.vpeterburge.ru/stations/4/narodnaya/">Народная</a>", отсутствовавшее по техническим причинам.
@@ -1021,6 +1146,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `23 марта 2009`,
     text: [
       `Добавлены фотографии станций "<a href="http://metro.vpeterburge.ru/stations/1/grazhd/">Гражданский Проспект</a>", "<a href="http://metro.vpeterburge.ru/stations/1/lesnaya/">Лесная</a>", "<a href="http://metro.vpeterburge.ru/stations/1/vyborg/">Выборгская</a>", "<a href="http://metro.vpeterburge.ru/stations/1/techno/">Технологический Институт-1</a>", "<a href="http://metro.vpeterburge.ru/stations/2/parnas/">Парнас</a>", "<a href="http://metro.vpeterburge.ru/stations/2/park/">Парк Победы</a>", "
@@ -1030,6 +1156,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `15 марта 2009`,
     text: [
       `Добавлены фотографии станций "<a href="http://metro.vpeterburge.ru/stations/2/frunz/">Фрунзенская</a>", "<a href="http://metro.vpeterburge.ru/stations/4/dostoev/">Достоевская</a>", "<a href="http://metro.vpeterburge.ru/stations/1/chernysh/">Чернышевская</a>"
@@ -1037,6 +1164,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `14 марта 2009`,
     text: [
       `Постепенно переписываем описания линий и станций.`,
@@ -1044,6 +1172,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `12 марта 2009`,
     text: [
       `Создана фотогалерея с большим количеством фотографий станции "<a href="http://metro.vpeterburge.ru/stations/4/spas/">Спасская</a>".`,
@@ -1052,6 +1181,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `10 марта 2009`,
     text: [
       `Исправлено описание станции "<a href="http://metro.vpeterburge.ru/stations/2/sennaya/">Сенная Площадь</a>". Большое спасибо Konik за составление текста.`,
@@ -1061,6 +1191,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `9 марта 2009`,
     text: [
       `Исправлено описание станции "<a href="http://metro.vpeterburge.ru/stations/4/spas/">Спасская</a>"`
@@ -1068,10 +1199,12 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `7 марта 2009`,
     text: `Поздравляем петербуржцев и гостей города с открытием станции "<a href="http://metro.vpeterburge.ru/stations/4/spas/">Спасская</a>"!`
   },
   {
+    year: `2009`,
     date: `6 марта 2009`,
     text: [
       `Завтра открывается станция "<a href="http://metro.vpeterburge.ru/stations/4/spas/">Спасская</a>".
@@ -1082,12 +1215,14 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `1 марта 2009`,
     text: [
       `Небольшое обновление в строящихся станциях.`
     ],
   },
   {
+    year: `2009`,
     date: `23 февраля 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/files/">схема путевого развития</a>. Нынешняя версия отличается прежде всего обозначенными ВШ и имеет номер 3.95. Следующая версия, имеющая номер 4.0, перестанет быть альфой, бетой или RC и станет
@@ -1096,6 +1231,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `16 февраля 2009`,
     text: [
       `Созданы фотогалереи и добавлены фотографии для станций "<a href="http://metro.vpeterburge.ru/stations/1/pl_lenina/">Площадь Ленина</a>" и "
@@ -1104,6 +1240,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `15 февраля 2009`,
     text: [
       `Обновлено описание станции "<a href="http://metro.vpeterburge.ru/stations/2/gork/">Горьковская</a>".`
@@ -1111,6 +1248,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `9 февраля 2009`,
     text: [
       `Небольшое обновление в строящихся станциях и "Спасской".`
@@ -1118,6 +1256,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `19 января 2009`,
     text: [
       `Обновлена <a href="http://metro.vpeterburge.ru/files/">схема путевого развития</a>`
@@ -1125,6 +1264,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `17 января 2009`,
     text: [
       `Добавлены фотографии перегона <a href="http://metro.vpeterburge.ru/stations/1/">Площадь Ленина-Выборгская</a>, обновлено описание и фотографии станции "<a href="http://metro.vpeterburge.ru/stations/3/primor/">Приморская</a>".`,
@@ -1134,6 +1274,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `13 января 2009`,
     text: [
       `Была создана <a href="http://www.metro.vpeterburge.ru/stations/2/kupchino/photo_kup/">Фотогалерея</a> и добавлена новая фотография станции "<a href="http://www.metro.vpeterburge.ru/stations/2/kupchino/">Купчино</a>". Обновлено описание станции.`,
@@ -1145,6 +1286,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `10 января 2009`,
     text: [
       `Был подкорректирован раздел <a href="http://www.metro.vpeterburge.ru/wagons/">Вагоны</a>, у большинства моделей появились <b>фотогалереи</b>`,
@@ -1154,6 +1296,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `9 января 2009`,
     text: [
       `Дорогие друзья! Теперь ориентироваться по списку станций на сайте стало гораздо легче. С сегодняшнего дня достаточно зайти в раздел "<a href="http://www.metro.vpeterburge.ru/stations/">Линии и станции</a>"и просто выбрать необходимую станцию,
@@ -1162,6 +1305,7 @@ export let news = [
     ],
   },
   {
+    year: `2009`,
     date: `8 января 2009`,
     text: [
       `Создана <a href="http://www.metro.vpeterburge.ru/stations/5/adm/photo_adm/">Фотогалерея</a> станции "<a href="http://www.metro.vpeterburge.ru/stations/5/adm/">Адмиралтейская</a>&quot , в которую вошли новые фотографии.`,
@@ -1171,6 +1315,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `6 января 2009`,
     text: [
       `Для станции "<a href="http://www.metro.vpeterburge.ru/stations/5/obvodn/">Обводный Канал</a>&quot была создана <a href="http://www.metro.vpeterburge.ru/stations/5/obvodn/photo_ok/">Фотогалерея</a>, в которую вошли две новые фотографии (Администрация
@@ -1180,6 +1325,7 @@ export let news = [
   },
 
   {
+    year: `2009`,
     date: `3 января 2009`,
     text: [
       `Были добавлены эскизы и чертежи станций третьей очереди Фрунзенского Радиуса: "<a href="http://www.metro.vpeterburge.ru/stations/5/slavy/">Проспект Славы</a>", "<a href="http://www.metro.vpeterburge.ru/stations/5/dun/">Дунайский Проспект</a>",
@@ -1187,6 +1333,7 @@ export let news = [
  <a href="http://www.metro.vpeterburge.ru/stations/5/Balk/">Балканская</a>" и "<a href="http://www.metro.vpeterburge.ru/stations/5/uzh/">Южная"</a>`],
   },
   {
+    year: `2009`,
     date: `2 января 2009`,
 
     text: [
@@ -1194,10 +1341,12 @@ export let news = [
  станциям, появились фотогалереи, которые в дальнейшем планируется ввести для всех остальных станций. Также изменения коснулись станций Фрунзенского радиуса и Адмиралтейской.`],
   },
   {
+    year: `2008`,
     date: `31 декабря 2008`,
     text: [`Редакция сайта от всей души поздравляет любителей и ненавистников метро с новым годом! Вот :)`]
   },
   {
+    year: `2008`,
     date: `20 декабря 2008`,
     text: [`Сегодня были торжественно открыты 1,5 станции петербургского Метрополитена - это "Волковская" и "Звенигородская"
  (с пересадкой на "Пушкинскую"). Движение осуществляется по обоим путям челночным движением с интервалом в 6 минут. Станцию "Спасская" и разделения 4 и 5 линий следует ожидать к 31 января 2009 года - к тому времени успеют пройти сертификацию
@@ -1205,6 +1354,7 @@ export let news = [
  то ли нет. В итоге придётся ждать до января 2009.`]
   },
   {
+    year: `2008`,
     date: `14 декабря 2008`,
 
     text: [
@@ -1216,19 +1366,23 @@ export let news = [
   },
 
   {
+    year: `2008`,
     date: `12 октября 2008`,
     text: [`С 11 октября 2008 года станция "Горьковская" закрыта на реконструкцию. Пользуйтесь станциями "Спортивная" и "Площадь Ленина-2".`]
   },
   {
+    year: `2008`,
     date: `12 сентября 2008`,
     text: [`Начата работа по описанию к "<a href="http://metro.vpeterburge.ru/objects/">Объектам метрополитена</a>". Вскоре планируется дополнение и расширение раздела.`]
   },
   {
+    year: `2008`,
     date: `4 сентября 2008`,
     text: [`Прошёлся по разделам строительства, постепенно привожу всё в божеский вид. В случае замечания откровенных косяков в фактах - прошу сообщать о них по Ктрл-Ентеру или по почте (исправляю
  я обычно в тот же день).`]
   },
   {
+    year: `2008`,
     date: `18 июля 2008`,
     text: [
       `В раздел <a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>:`,
@@ -1238,6 +1392,7 @@ export let news = [
     ],
   },
   {
+    year: `2008`,
     date: `15 июля 2008`,
     text: [
       `Добавлена фотография станции "<a href="http://metro.vpeterburge.ru/stations/5/komenda/">Комендантский проспект</a>"`,
@@ -1246,17 +1401,20 @@ export let news = [
     ],
   },
   {
+    year: `2008`,
     date: `3 июля 2008`,
     text: [`Обновлено описание станций "<a href="http://metro.vpeterburge.ru/stations/5/slavy/">Проспект Славы</a>", "<a href="http://metro.vpeterburge.ru/stations/5/dun/">Дунайская</a>", "<a href="http://metro.vpeterburge.ru/stations/5/Balk/">Балканская</a>",
  "
  <a href="http://metro.vpeterburge.ru/stations/5/uzh/">Южная</a>"`]
   },
   {
+    year: `2008`,
     date: `18 июня 2008`,
     text: [`В раздел <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a> добавлен новый подраздел, посвященный вагонам модели <a href="http://metro.vpeterburge.ru/wagons/717/">81-717(714) и 81-717.5(714.5)</a>
  `]
   },
   {
+    year: `2008`,
     date: `17 июня 2008`,
     text: [
       `В раздел <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a> добавлен новый подраздел, посвященный вагонам типа <a href="http://metro.vpeterburge.ru/wagons/em_modrnize/">Ем501М/Ема502М</a>`,
@@ -1264,6 +1422,7 @@ export let news = [
     ],
   },
   {
+    year: `2008`,
     date: `16 июня 2008`,
     text: [
       `В раздел <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a> добавлен новый подраздел, посвященный вагонам типа <a href="http://metro.vpeterburge.ru/wagons/em/">Ем/Ема/Емх</a>`,
@@ -1272,63 +1431,77 @@ export let news = [
     ],
   },
   {
+    year: `2008`,
     date: `15 июня 2008`,
     text: [`
  Обновление схемы <a href="http://metro.vpeterburge.ru/data/files/spb.png">путевого развития</a>
  `]
   },
   {
+    year: `2008`,
     date: `1 июня 2008`,
     text: [`Обновление схемы <a href="http://metro.vpeterburge.ru/data/files/spb.png">путевого развития</a>
  `]
   },
   {
+    year: `2008`,
     date: `26 мая 2008`,
     text: [`Бета-версия обновлённой <a href="http://metro.vpeterburge.ru/data/files/spb.png">схемы путевого развития</a>. Все впечатления и пожелания буду рад услышать по e-mail - djtonik@bk.ru`]
   },
   {
+    year: `2008`,
     date: `28 апреля 2008`,
     text: [`В тестовом режиме заработала проверка орфографии и отправка пожеланий редакторам сайта. Для отправки Вашего уточнения достаточно выделить нужный текст на сайте мышкой и нажать Ctrl+Enter.`]
   },
   {
+    year: `2008`,
     date: `1 апреля 2008`,
     text: [`
  Уточнение нумерации <a href="http://metro.vpeterburge.ru/objects/vsh/">вентиляционных шахт</a>`]
   },
   {
+    year: `2008`,
     date: `25 марта 2008`,
     text: [`Добавлены 5 фотографий станций <a href="http://metro.vpeterburge.ru/stations/1/">1</a>, <a href="http://metro.vpeterburge.ru/stations/2/">2</a>, <a href="http://metro.vpeterburge.ru/stations/4/">4</a> и <a href="http://metro.vpeterburge.ru/stations/5/">5</a> линий`]
   },
   {
+    year: `2008`,
     date: `21 марта 2008`,
     text: [`Открылся новый раздел <a href="http://metro.vpeterburge.ru/wagons/">Вагоны</a>, посвященный подвижному составу Петербургского метрополитена. Пока в разделе немного фотографий и информации,
  но он будет постоянно дополняться и обновляться.`]
   },
   {
+    year: `2008`,
     date: `19 марта 2008`,
     text: [`В раздел <a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a> добавлены фотографии ВШ 207 и 212, а также к некоторым превьюшкам ВШ добавлены большие форматы.`]
   },
   {
+    year: `2008`,
     date: `17 марта 2008`,
     text: [`Обновление описаний некоторых станций.`]
   },
   {
+    year: `2008`,
     date: `16 марта 2008`,
     text: [`Произведено изменение структуры раздела "Вентиляционные шахты" Добавлены новые превьюшки в тот же раздел Добавлены фотографии станций <a href="http://metro.vpeterburge.ru/stations/1/grazhd/">Гражданский проспект</a> и <a href="http://metro.vpeterburge.ru/stations/1/dachnoe/">Дачное</a>`]
   },
   {
+    year: `2008`,
     date: `14 марта 2008`,
     text: [`Обновляются описания перегонов. Добавлена возможность перехода с любой страницы на заглавную страницу сайта.`]
   },
   {
+    year: `2008`,
     date: `13 марта 2008`,
     text: [`Добавлены превьюшки в раздел <a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>.`]
   },
   {
+    year: `2008`,
     date: `12 марта 2008`,
     text: [`Добавлены фотографии в раздел <a href="http://metro.vpeterburge.ru/objects/vsh/">Вентиляционные шахты</a>.`]
   },
   {
+    year: `2008`,
     date: `11 марта 2008`,
     text: [
       `В тестовом режиме работает <a href="http://metro.vpeterburge.ru/guestbook/">Гостевая книга</a>`,
@@ -1336,14 +1509,17 @@ export let news = [
     ],
   },
   {
+    year: `2008`,
     date: `10 марта 2008`,
     text: [`Обновились описания и добавлены фотографии станций <a href="http://metro.vpeterburge.ru/stations/5/zvenig/">Звенигородская</a> и <a href="http://metro.vpeterburge.ru/stations/5/obvodn/">Обводный канал</a>.`]
   },
   {
+    year: `2008`,
     date: `9 марта 2008`,
     text: [`Сайт переведён на SQL-движок, за что огромное спасибо FileJunkie. Теперь будем развиваться дальше. Попробуем совместное редактирование сайта с разными хорошими людьми.`]
   },
   {
+    year: `2007`,
     date: `15 августа 2007`,
     text: [
       `В разделе "<a href="http://www.metro.vpeterburge.ru/photo/">Фотогалерея</a>" добавлены <a href="http://www.metro.vpeterburge.ru/archive/1982art/">статья из журнала "Искусство"</a> и <a href="http://www.metro.vpeterburge.ru/archive/1957sight/">очерк из книги "Достопримечательности Ленинграда"</a> за 1982 и 1957 годы. Спасибо Naisa за поиск и обработку материала.`,
@@ -1351,10 +1527,12 @@ export let news = [
     ],
   },
   {
+    year: `2007`,
     date: `9 августа 2007`,
     text: [`Сайт находится на временном хостинге до переезда на новое, постоянное место. Немного обновлена схема путевого развития. Вскоре будет большое обновление сайта с фотографиями.`]
   },
   {
+    year: `2007`,
     date: `20 июня 2007`,
     text: [
       `На пресс-конференции, состоявшейся 19 июня, было объявлено о закрытии станции "Горьковская" 1 окрября 2007 года. А также о закрытии "Нарвской" в начале 2008-го. Объявлено
@@ -1365,6 +1543,7 @@ export let news = [
     ],
   },
   {
+    year: `2007`,
     date: `6 апреля 2007`,
     text: [
       `23 марта завершена механизированная проходка тоннеля для II пути перегона "Спасская-Достоевская".`,
@@ -1372,6 +1551,7 @@ export let news = [
     ],
   },
   {
+    year: `2007`,
     date: `21 марта 2007`,
     text: [
       `Небольшое обновление с фотографиями:`,
@@ -1379,6 +1559,7 @@ export let news = [
       `Благодаря ребятам из СПИКИП, сделано описание и фотографии недостроенных тоннелей <a href="http://www.metro.vpeterburge.ru/construct/678/">Кольцевой Линии</a>.`],
   },
   {
+    year: `2007`,
     date: `13 февраля 2007`,
     text: [
       `Метро активно строится на наши с вами 14 рублей! Это не может не радовать.`,
@@ -1388,6 +1569,7 @@ export let news = [
   },
 
   {
+    year: `2007`,
     date: `25 января 2007`,
     text: [
       `21 января 2007 года произошла последняя сбойка на Фрунзенском Радиусе 5-й линии метро!`,
@@ -1397,6 +1579,7 @@ export let news = [
     ],
   },
   {
+    year: `2007`,
     date: `2 января 2007`,
     text: [
       `Юбилейная, 60-я станция "Парнас" торжественно открыта 22-го декабря.`,
@@ -1410,10 +1593,12 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `22 ноября 2006`,
     text: [`Косметическое обновление в связи с открытием "<a href="http://www.metro.vpeterburge.ru/stations/3/prolet/">Пролетарской</a>" и "<a href="http://www.metro.vpeterburge.ru/stations/2/parnas/">Парнаса</a>".`]
   },
   {
+    year: `2006`,
     date: `6 октября 2006`,
     text: [
       `На <a href="http://www.metro.vpeterburge.ru/">заглавной странице</a> сайта заменён текст приветствия. Реконструкция станции "<a href="http://www.metro.vpeterburge.ru/stations/3/prolet/">Пролетарская</a>"
@@ -1430,6 +1615,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `16 августа 2006`,
     text: [
       `Вестибюль станции "<a href="http://www.metro.vpeterburge.ru/stations/1/vlad/">Владимирская</a>" закрывается до 01.03.2008 на реконструкцию. Не пользуйтесь вестибюлем станции
@@ -1439,6 +1625,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `1 августа 2006`,
     text: [
       `На станции "<a href="http://www.metro.vpeterburge.ru/stations/2/petr/">Петроградская</a>" заменены турникеты. Объявлено о закрытии станции "<a href="http://www.metro.vpeterburge.ru/stations/2/gork/">Горьковская</a>"
@@ -1457,6 +1644,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `6 июня 2006`,
     text: [
       `Очередное обновление:`,
@@ -1464,6 +1652,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `3 июня 2006`,
     text: [
       `В продолжение предыдущего обновления:`,
@@ -1473,6 +1662,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `31 мая 2006`,
     text: [
       `Продолжается строительство <a href="http://www.metro.vpeterburge.ru/stations/5/">Фрунзенского Радиуса</a> Петербургского Метрополитена. Активно строятся станции "<a href="http://www.metro.vpeterburge.ru/stations/5/zvenig/">Звенигородская</a>",
@@ -1490,6 +1680,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `2 апреля 2006`,
     text: [
       `Портал <a href="http://nwd.ru">NWD.ru</a> переехал на свой, Питерский сервер. На станции "<a href="http://www.metro.vpeterburge.ru/stations/2/nevs/">Невский Проспект</a>" продолжается
@@ -1510,6 +1701,7 @@ export let news = [
     ],
   },
   {
+    year: `2006`,
     date: `16 марта 2006`,
     text: [
       `Впервые после долгого отсутствия вашему вниманию предлагается обновление:`,
@@ -1521,6 +1713,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `16 ноября 2005`,
     text: [
       `Вчера Петербургскому (Ленинградскому) Метрополитену исполнилось 50 лет. На станциях первой очереди - которые открылись в 1955 году, и на "Пушкинской" можно было приобрести коллекционные
@@ -1536,6 +1729,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `31 октября 2005`,
     text: [
       `Очередное обновление:`,
@@ -1545,6 +1739,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `8 сентября 2005`,
     text: [
       `Очередное обновление:`,
@@ -1556,6 +1751,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `27 августа 2005`,
     text: [
       `Очередное обновление:`,
@@ -1564,6 +1760,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `24 августа 2005`,
     text: [
       `Внимание! Станция "Пролетарская закрыта с завтрашнего дня и до 25 февраля 2007!`,
@@ -1575,6 +1772,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `12 августа 2005`,
     text: [
       `Итак, обновление:`,
@@ -1584,6 +1782,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `4 июля 2005`,
     text: [
       `Мадам, месье, пардон за долгое отсутствие. Дело в том, что май и июнь были очень насыщенными в плане всяких событий, и посему обновление сайта несколько задержалось. Сначала газета "10
@@ -1606,6 +1805,7 @@ export let news = [
   },
 
   {
+    year: `2005`,
     date: `25 апреля 2005`,
     text: [
       `Обновление:`,
@@ -1617,6 +1817,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `02 апреля 2005`,
     text: [
       `В Петербурге открылась 59-ая по счёту (или неофициально 61-ая) станция метро - "Комендантский Проспект". Обновление:`,
@@ -1634,6 +1835,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `28 февраля 2005`,
     text: [
       `ВНИМАНИЕ! Станция "Комендантский Проспект" будет открыта 02 апреля! В январе 2005 станцию посетила В. Матвиенко. Она полностью раскритиковала художественное оформление станции
@@ -1653,6 +1855,7 @@ export let news = [
     ],
   },
   {
+    year: `2005`,
     date: `16 января 2005`,
     text: [
       `ГУП "Петербургский Метрополитен" вводит одноразовые магнитные карточки. На перегоне "Сенная-Невский" испытывается оборудование МТС и Мегафон. Стоимость поездки с 01.01.2005 составляет 10 рублей. Строительство "Комендантского Проспекта" заканчивается, а линии 5 активно продолжается. Идея "Лёгкого метро" вдоль Бухарестской улицы окончательно отметена. Сайту исполнился год. В связи с этим:`,
@@ -1668,6 +1871,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `10.11.2004`,
     text: [
       `Выложена новая фотогалерея - "Станции Ленинградского метрополитена", датируемая 1956 годом. (Спасибо Svyazisty за предоставленные материалы). Поправлена информация по станциям "Обводный
@@ -1711,21 +1915,25 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `06.08.2004`,
     text: [`Сделано существенное дополнение к описанию станции "Купчино".`]
   },
   {
+    year: `2004`,
     date: `05.08.2004`,
     text: [`На сайте очередное МЕГАэксклюзивное обновление: выложены фотографии 1953 (!) года - проекты первой очереди метрополитена Ленинграда. К сожалению, на всех фотографиях пришлось поставить копирайт.
  Обратите внимание на станцию "Автово" - сделали совсем не то, что было в проекте.`]
   },
   {
+    year: `2004`,
     date: `04.08.2004`,
     text: [`Добавлены служебные названия станций "Автово" и "Нарвская" (Спасибо за информацию Михаилу Семёнову). Обновлена информация и фотография ТЧ-5 "Невское". Выложена
  схема готовности станций "Звенигородская" и "Обводный Канал" (см. раздел "Файлы -&raquo; Схемы станций"). Обновлена информация по станции "Звенигородская". Немного обновлена информация по станции "Обводный
  Канал". Выложено обновление GIF-схемы путевого развития и современной схемы метрополитена.`]
   },
   {
+    year: `2004`,
     date: `30.07.2004`,
     text: [`На сайте появилась эксклюзивная фотогаллерея - первая очередь метрополитена Ленинграда. Фото сделаны в 1957 году (полный эксклюзив!)... Многое из того, что вы увидите на этих фотографиях,
  было утрачено в разные исторические периоды. Больше ни у кого нет таких фотографий! Также обновлена GIF-схема. На ней отражено путевое развитие ТЧ-5 "Невское", где мы были 18 июля. К сожалению, не нашли гейт с жд - кто нибудь знает,
@@ -1733,6 +1941,7 @@ export let news = [
  узле "Площадь Восстания" также появилась фотография. Исправлена информация по проектному названию станции "Гражданский Проспект".`]
   },
   {
+    year: `2004`,
     date: `19.07.2004`,
     text: [
       `Одно из самых больших обновлений сайта за все времена: добавлено ОГРОМНОЕ количество фотографий... Осталось всего несколько файлов, и фотки будут на всех станциях... На некоторых станциях
@@ -1768,17 +1977,20 @@ export let news = [
  станции "Адмиралтейская" с подземными переходами под Дворцовой Площадью. ВНИМАНИЕ! Размер файла - 1,9 Мб!`]
   },
   {
+    year: `2004`,
     date: `07.07.2004`,
     text: [`Появились фотография и описание станции "Парнасская". Значительно обновлено описание станции "Комендантский Проспект". Обновлено и расширено описание депо "Выборгское".
  Исправлено огромное количество опечаток. И САМОЕ ГЛАВНОЕ: НА САЙТЕ ПОЯВИЛСЯ НОВЫЙ РАЗДЕЛ "ФОТОГАЛЛЕРЕЯ"! СКОРЕЕ ВСЕ ТУДА!`]
   },
   {
+    year: `2004`,
     date: `06.07.2004`,
     text: [`Благодарю всех, кто был в походе в ТЧ-6. Пришлось немного поплутать по болотам, но, я думаю, никто не остался недовольным. Особенно приятно было видеть пополнение в своих рядах... Ближе к
  теме: На сайте появились фотки ТЧ-6, Горьковской, Петроградской, Площади Мужества, Сенной Площади. На путевом развитии (Gif и Swf) отмечены все пути депо "Выборгское"). Обновлена схема "С поправками метростроя". Выложен №12
  газеты Петербургского Метрополитена. Выложена приблизительная схема станции "Комендантский Проспект" (в разделе "Файлы").`]
   },
   {
+    year: `2004`,
     date: `03.07.2004`,
     text: [`Предыдущие два дня я посвятил общению с Владимиром Гарюгиным (начальник ПетМета) и... походу на "Комендантский Проспект", где я был ВЕЗДЕ - начиная от СТП и заканчивая наклонником.
  Узнал про вторую лестницу со станции, и про всё, что нас интересовало... С удовольствием расскажу всем об этих приключениях при встрече с пивком. Теперь о сайте: выложены обновлённые версии схем: обновлена "Схема путевого развития на карте
@@ -1787,22 +1999,26 @@ export let news = [
  обратите внимание на "Комендантский Проспект".`]
   },
   {
+    year: `2004`,
     date: `30.06.2004`,
     text: [`26.06.2004 состоялось торжественное открытие нового отрезка от станции "Лесная" до станции "Площадь Мужества". Практически все участники Форума торжественно прокатились
  на Первом Поезде. Первый поезд со станции "Лесная" был встречен нами апплодисментами, которые позже поддержали все пассажиры. Спасибо всем, кто участвовал. Теперь об обновлениях. На описаниях линий появились их примерные схемы. Выложены
  фотографии станций "Приморская" и "Озерки". И теперь главная новость: теперь на сайте выходит "Газета Петербургского Метрополитена". К сожалению, она доступна не для всех.`]
   },
   {
+    year: `2004`,
     date: `26.06.2004`,
     text: [`Теперь на каждой станции, где пока нет фотографии, добавлена схема. Добавлен архитектор станции "Ладожская", появилась информация о переходе на "Ладожскую-2" Кольцевой
  линии.`]
   },
   {
+    year: `2004`,
     date: `24.06.2004`,
     text: [`Сегодня обновлена страница с кодировками станций, добавлен факт о станции "Петроградская". Добавлены архитекторы станций"Звёздная", "Московская" и "Сенная
  Площадь". Исправлен тип станции "Улица Дыбенко".`]
   },
   {
+    year: `2004`,
     date: `23.06.2004`,
     text: [`Добро пожаловать на новую версию метросайта. С гордостью представляю вашему вниманию версию 6. Даже не терпится рассказать обо всех исправлениях, дополнениях и улучшениях, которые ждут вас...`,
       `Итак, начнём: Переделаны все страницы сайта. Практически все описания переписывались заново, добавлялись новые факты и комментарии. Ко многим станциям помимо описаний добавились фотографии - то, что вы так давно ждали... Сейчас на сайте их не
@@ -1812,6 +2028,7 @@ export let news = [
  коллективу NWD. Также добавлено две новые схемы - "Современная с развитием" и "Схема скоростного транспорта Амстердама". Обновлены обе схемы путевого развития.`]
   },
   {
+    year: `2004`,
     date: `17.06.2004`,
     text: [
       `Всем привет! Извиняюсь за столь длительное молчание - не было возможности заняться сайтом, как вы знаете, идёт подготовка к новой версии сайта (с фотографиями). Итак, выкладываю Вашему вниманию:`,
@@ -1822,6 +2039,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `10.06.2004`,
     text: [
       `Совсем забыл сказать, что бета-6 просуществовала всего полдня, уже к вечеру её сменила первая, официальная версия 1.0. К сожалению, не было возможности сказать об этом ранее.`,
@@ -1830,6 +2048,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `05.06.2004`,
     text: [
       `Лето пришло . У меня приступ паранойи - я всё больше склоняюсь к выводу, что на &laquo;Комендантском Проспекте&raquo; заточка под 9 линию, а не под выход: Плиз, разубедите меня!`,
@@ -1841,12 +2060,14 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `30.05.2004`,
     text: [
       `Сделана новая схема пересадочного узла &laquo;Сенная Площадь / Садовая&raquo;. Теперь она тоже переехала во Flash , добавлена схема шахты 520 и ещё куча всего: Скорее смотрите! Все в раздел &laquo;Файлы&raquo;!!! `
     ],
   },
   {
+    year: `2004`,
     date: `28.05.2004`,
     text: [
       `Выложена давно уже ожидаемая схема готовности строящейся станции &laquo;Спасская&raquo;. На ней указаны все построенные тоннели, перегоны и залы: Если будут вопросы - обращайтесь:`,
@@ -1855,6 +2076,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `25.05.2004`,
     text: [
       `УРА!!!!`,
@@ -1862,6 +2084,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `24.05.2004`,
     text: [
       `Один день до победы над размывом (!!!)`,
@@ -1869,6 +2092,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `22.05.2004`,
     text: [
       `Выложена бета-5 флэш-схемы.`,
@@ -1877,6 +2101,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `18.05.2004`,
     text: [
       `Исправлена и дополнена информация о двух оборотных тоннелях: между &laquo;Лесной&raquo; и &laquo;Площадью Мужества&raquo; и между &laquo;Площадью Мужества&raquo; и &laquo;Политехнической&raquo;.`,
@@ -1886,6 +2111,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `15.05.2004`,
     text: [
       `Вчера был пожар на станции &laquo;Технологический Институт&raquo;.`,
@@ -1893,6 +2119,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `14.05.2004`,
     text: [
       `Сегодня сообщили о демонтаже оборотных путей за Лесной и Площадью Мужества.`,
@@ -1904,6 +2131,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `11.05.2004`,
     text: [
       `Новейшая версия схемы путевого развития (бета-3) теперь доступна с сайта. Огромную помощь в составлении схемы оказал Михаил.`,
@@ -1911,6 +2139,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `06.05.2004`,
     text: [
       `В депо &laquo;Выборгское&raquo; и &laquo;Невское&raquo; добавлено количество ячеек (путей).`,
@@ -1921,6 +2150,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `05.05.2004`,
     text: [
       `Рисунок с главной страницы доступен в разделе &laquo;Файлы&raquo;. Схема называется &laquo;НИИ ТРИТИ с поправками:&raquo;`,
@@ -1932,6 +2162,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `04.05.2004`,
     text: [
       `Новый рисунок на главной странице - занимает и грузится в два раза быстрее, причём схема была заменена на НИИшную с поправками метростроя.`,
@@ -1939,6 +2170,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `01.05.2004`,
     text: [
       `<strong>С праздником, товарищи! </strong>`,
@@ -1949,6 +2181,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `29.04.2004`,
     text: [
       `Извиняюсь за долгое отсутствие.`,
@@ -1959,6 +2192,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `22.04.2004`,
     text: [
       `В очередной раз поправлена схема.`,
@@ -1968,12 +2202,14 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `21.04.2004`,
     text: [
       `Огромное количество добавлений на схеме путевого развития. `
     ],
   },
   {
+    year: `2004`,
     date: `20.04.2004`,
     text: [
       `Добавлены индексы некоторых станций.`,
@@ -1982,6 +2218,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `18.04.2004`,
     text: [
       `Обновлена схема путевого развития.`,
@@ -1991,6 +2228,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `16.04.2004`,
     text: [
       `Рад приветствовать вас на новом домене. Надеюсь, сотрудничество с <strong>nwd </strong><strong>. </strong><strong>ru </strong> будет длительным и плодотворным:`,
@@ -2002,6 +2240,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `15.04.2004`,
     text: [
       `Ура! Свершилось! Огромное спасибо SRG за работу и свежие идеи в дизайне. Полностью переделан весь сайт. По идее, всё должно загружаться раза в два побыстрее. Если что не так - пишите в гостевой, буду разбираться:`,
@@ -2014,6 +2253,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `11.04.2004`,
     text: [
       `Обновления и дополнения многих станций линии 4.`,
@@ -2029,6 +2269,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `10.04.2004`,
     text: [
       `Съездил на &laquo;Площадь Восстания&raquo;. Посмотрел, как там чё.`,
@@ -2046,6 +2287,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `07.04.2004`,
     text: [
       `Благодарю всех, кто принимает участие в Гостевой Книге. Я стараюсь по возможности исправлять ошибки и вношу дополнения.`,
@@ -2054,6 +2296,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `04.04.2004`,
     text: [
       `Мною был предпринят подвиг: из Купчино доехать до &laquo;Девяткино&raquo;. Отчёт об этой поездке - в разделе &laquo;Размышления&raquo;. Статья называется &laquo;Заброшенная Ветка Метро&raquo;.`,
@@ -2063,12 +2306,14 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `03.04.2004`,
     text: [
       `С 09:00 Гостевая Книга работает в тестовом режиме. Если там будет только один хлам, снесу всё нафиг: J `
     ],
   },
   {
+    year: `2004`,
     date: `02.04.2004`,
     text: [
       `Добавлены коды десяти станций линии 2 (по первому пути).`,
@@ -2078,6 +2323,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `01.04.2004`,
     text: [
       `Поздравляю с праздником! А теперь без шуток:`,
@@ -2086,6 +2332,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `31.03.2004`,
     text: [
       `Исправлена обратно информация насчёт торговли на станции &laquo;Купчино&raquo;.`,
@@ -2097,12 +2344,14 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `30.03.2004`,
     text: [
       `Добавлены два факта об &laquo;Электросиле>. `
     ],
   },
   {
+    year: `2004`,
     date: `29.03.2004`,
     text: [
       `Обновлена схема путевого развития. Исправления, в основном, коснулись линии 4.`,
@@ -2111,6 +2360,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `27.03.2004`,
     text: [
       `Добавлен факт о Ладожской.`,
@@ -2118,6 +2368,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `25.03.2004`,
     text: [
       `Споры в Законодательном Собрании Петербурга о втором выходе со станции &laquo;Спортивная> в Тучков Переулок. Предмет споров - снос исторических зданий. Детали проекта: выход из нижнего зала через горизонтальные эскалаторы в вестибюль на Тучковом Переулке. Для строительства этого вестибюля потребуется снос двух-трёх домов, а его строительство будет завершено через 5 лет.`,
@@ -2128,6 +2379,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `19.03.2004`,
     text: [
       `Обновления коснулись всех разделов &laquo;Линии&raquo;. Практически везде сделаны добавления и исправления.`,
@@ -2141,6 +2393,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `16.03.2004`,
     text: [
       `Объявлено о начале установок автоматов для продажи ученических и студенческих проездных карточек. Целиком охватить метрополитен планируется к маю 2004.`,
@@ -2152,6 +2405,7 @@ export let news = [
     ],
   },
   {
+    year: `2004`,
     date: `03.03.2004`,
     text: [
       `Большое собрание начальников метрополитена у губернатора Валентины Матвиенко. Рассматривались перспективы развития; увеличение бюджетных вливаний до 3 млрд. рублей; Возобновление строительства Фрунзенского радиуса с переходом на технологию
