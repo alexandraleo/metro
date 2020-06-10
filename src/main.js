@@ -25,68 +25,59 @@ const renderNewsBlock = () => {
   render(newsNode, newsBoardElement, RenderPosition.BEFOREEND);
 };
 
-const renderNews = () => {
+const renderNews = (filteredNews) => {
   let newsDataNode = newsNode.querySelector(`.news-page__board`);
-  for (let oneWord of newsData) {
+  for (let oneWord of filteredNews) {
     const wordElement = new Word(oneWord);
     render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
   }
 };
 
-const getNewsFilters = (newsArray) => {
-  let filtersArray = new Set();
-  let filterObj = {year: ``, href: ``, quantity: 0};
-  let arr = [];
-
-  for (let word of newsArray) {
-    Object.entries(word).forEach(([key, value]) => {
-      if (key === `year`) {
-        filtersArray.add(value);
-      }
-    });
+const getFilters = () => {
+  let countedNews = newsData.reduce(function (allNews, word) {
+    if (word.year in allNews) {
+      allNews[word.year]++;
+    } else {
+      allNews[word.year] = 1;
+    }
+    return allNews;
+  }, {});
+  let filters = [];
+  for (let [key, value] of Object.entries(countedNews)) {
+    filters.push({year: key, quantity: value});
   }
-  filtersArray = [...filtersArray].sort((a, b) => {
-    return b - a;
+  filters.sort((a, b) => {
+    return b.year - a.year;
   });
-  // filtersArray.forEach((item) => {
-  //   filterObj.year = item;
-  //   filterObj.href = filterObj.year;
-  //   filterObj.quantity = countFilteredNews(newsArray, item);
-  //   console.log(filterObj);
-  //   arr.push(filterObj);
-  // });
-  // return arr;
-  return filtersArray;
+  filters[0].isActive = true;
+  return filters;
 };
+
+let filtersArray = getFilters();
 
 const filterNews = (filterName, newsArray) => {
-  return newsArray.filter((item) => item.filterName);
-};
-
-const countFilteredNews = (newsArray, property) => {
-  return newsArray.reduce((summ, curr) => +summ + +curr[property], 0);
+  return newsArray.filter((item) => item.year === filterName);
 };
 
 const renderNewsFilter = () => {
-  let filters = getNewsFilters(newsData);
-
-  // console.log(filters);
+  let filters = getFilters();
   for (let filter of filters) {
     const newsFilter = new Filter(filter);
     render(filterNode, newsFilter, RenderPosition.BEFOREEND);
 
     newsFilter.onFilter = () => {
-      let newsDataNode = document.querySelector(`.news-page__board`);
-      const filteredNews = filterNews(filter.filterName, newsData);
-      for (let oneWord of filteredNews) {
-        const wordElement = new Word(oneWord);
-        render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
-      }
+      // let newsDataNode = document.querySelector(`.news-page__board`);
+      const filteredNews = filterNews(filter.year, newsData);
+      // for (let oneWord of filteredNews) {
+      //   const wordElement = new Word(oneWord);
+      //   render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
+      // }
+      renderNews(filteredNews);
     };
   }
 };
 // renderHelloPage();
 renderMenu();
 renderNewsBlock();
-renderNews();
 renderNewsFilter();
+renderNews(filterNews(filtersArray[1].year, newsData), newsData);
