@@ -203,14 +203,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Filter", function() { return Filter; });
 /* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
 /* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
+/* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
+
 
 
 class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor(data) {
     super();
-    this._filterName = data;
-    this._href = data;
+    this._filterName = data.year;
+    this._href = data.year;
     this._quantity = data.quantity;
+    this._isActive = data.isActive;
     this._onFilterClick = this._onFilterClick.bind(this);
   }
 
@@ -226,7 +229,7 @@ class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
     }
     this._isActive = !this._isActive;
     this.unbind();
-    this._iactiveFilterUpdate();
+    this._activeFilterUpdate();
     this.bind();
     return typeof this._onFilter === `function` && this._onFilter();
   }
@@ -247,9 +250,11 @@ class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
     this._quantity = newQuantity;
   }
   getTemplate() {
-    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год</a></li>`;
+    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год
+    <span class="filter-list__item-count"> - ${Object(_data_utils_js__WEBPACK_IMPORTED_MODULE_2__["chooseWordsEndings"])(this._quantity, [`новость`, `новости`, `новостей`])}</span></a></li>`;
   }
-  // <span class="filter-list__item-count">${this._quantity}</span>
+
+
 }
 
 
@@ -2746,6 +2751,25 @@ let news = [
 
 /***/ }),
 
+/***/ "./src/data/utils.js":
+/*!***************************!*\
+  !*** ./src/data/utils.js ***!
+  \***************************/
+/*! exports provided: chooseWordsEndings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "chooseWordsEndings", function() { return chooseWordsEndings; });
+let chooseWordsEndings = (number, words) => {
+  const cases = [2, 0, 1, 1, 1, 2];
+  const wordIndex = (number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5];
+  return `${number} ${words[wordIndex]}`;
+};
+
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
@@ -2788,71 +2812,62 @@ const renderNewsBlock = () => {
   Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(newsNode, newsBoardElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].BEFOREEND);
 };
 
-const renderNews = () => {
+const renderNews = (filteredNews) => {
   let newsDataNode = newsNode.querySelector(`.news-page__board`);
-  for (let oneWord of _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]) {
+  for (let oneWord of filteredNews) {
     const wordElement = new _components_word_js__WEBPACK_IMPORTED_MODULE_1__["default"](oneWord);
     Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(newsDataNode, wordElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].AFTERBEGIN);
   }
 };
 
-const getNewsFilters = (newsArray) => {
-  let filtersArray = new Set();
-  let filterObj = {year: ``, href: ``, quantity: 0};
-  let arr = [];
-
-  for (let word of newsArray) {
-    Object.entries(word).forEach(([key, value]) => {
-      if (key === `year`) {
-        filtersArray.add(value);
-      }
-    });
+const getFilters = () => {
+  let countedNews = _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"].reduce(function (allNews, word) {
+    if (word.year in allNews) {
+      allNews[word.year]++;
+    } else {
+      allNews[word.year] = 1;
+    }
+    return allNews;
+  }, {});
+  let filters = [];
+  for (let [key, value] of Object.entries(countedNews)) {
+    filters.push({year: key, quantity: value});
   }
-  filtersArray = [...filtersArray].sort((a, b) => {
-    return b - a;
+  filters.sort((a, b) => {
+    return b.year - a.year;
   });
-  // filtersArray.forEach((item) => {
-  //   filterObj.year = item;
-  //   filterObj.href = filterObj.year;
-  //   filterObj.quantity = countFilteredNews(newsArray, item);
-  //   console.log(filterObj);
-  //   arr.push(filterObj);
-  // });
-  // return arr;
-  return filtersArray;
+  filters[0].isActive = true;
+  return filters;
 };
+
+let filtersArray = getFilters();
 
 const filterNews = (filterName, newsArray) => {
-  return newsArray.filter((item) => item.filterName);
-};
-
-const countFilteredNews = (newsArray, property) => {
-  return newsArray.reduce((summ, curr) => +summ + +curr[property], 0);
+  return newsArray.filter((item) => item.year === filterName);
 };
 
 const renderNewsFilter = () => {
-  let filters = getNewsFilters(_data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
-
-  // console.log(filters);
+  let filters = getFilters();
   for (let filter of filters) {
     const newsFilter = new _components_news_filter_js__WEBPACK_IMPORTED_MODULE_4__["Filter"](filter);
     Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(filterNode, newsFilter, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].BEFOREEND);
 
     newsFilter.onFilter = () => {
-      let newsDataNode = document.querySelector(`.news-page__board`);
-      const filteredNews = filterNews(filter.filterName, _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
-      for (let oneWord of filteredNews) {
-        const wordElement = new _components_word_js__WEBPACK_IMPORTED_MODULE_1__["default"](oneWord);
-        Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(newsDataNode, wordElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].AFTERBEGIN);
-      }
+      // let newsDataNode = document.querySelector(`.news-page__board`);
+      const filteredNews = filterNews(filter.year, _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
+      // for (let oneWord of filteredNews) {
+      //   const wordElement = new Word(oneWord);
+      //   render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
+      // }
+      renderNews(filteredNews);
     };
   }
 };
 // renderHelloPage();
 renderMenu();
 renderNewsBlock();
-renderNews();
 renderNewsFilter();
+renderNews(filterNews(filtersArray[1].year, _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]), _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
 
 
 /***/ }),

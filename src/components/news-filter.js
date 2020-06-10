@@ -1,11 +1,13 @@
 import Component from "../component.js";
 import {replace} from "../render.js";
+import {chooseWordsEndings} from "../data/utils.js";
 export class Filter extends Component {
   constructor(data) {
     super();
-    this._filterName = data;
-    this._href = data;
+    this._filterName = data.year;
+    this._href = data.year;
     this._quantity = data.quantity;
+    this._isActive = data.isActive;
     this._onFilterClick = this._onFilterClick.bind(this);
   }
 
@@ -21,7 +23,7 @@ export class Filter extends Component {
     }
     this._isActive = !this._isActive;
     this.unbind();
-    this._iactiveFilterUpdate();
+    this._activeFilterUpdate();
     this.bind();
     return typeof this._onFilter === `function` && this._onFilter();
   }
@@ -42,7 +44,9 @@ export class Filter extends Component {
     this._quantity = newQuantity;
   }
   getTemplate() {
-    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год</a></li>`;
+    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год
+    <span class="filter-list__item-count"> - ${chooseWordsEndings(this._quantity, [`новость`, `новости`, `новостей`])}</span></a></li>`;
   }
-  // <span class="filter-list__item-count">${this._quantity}</span>
+
+
 }
