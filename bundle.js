@@ -202,86 +202,53 @@ class Menu extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Filter", function() { return Filter; });
 /* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
-/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
-/* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
+/* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
 
 
 
+const FILTER_ID_PREFIX = `filter__`;
+const getFilterNameByID = (id) => {
+  return id.substring(FILTER_ID_PREFIX.length);
+};
+
+const createFilterMarkup = (filter, isChecked) => {
+  const {year, quantity} = filter;
+
+  return (
+    `<input
+    type="radio"
+    id="filter__${year}"
+    class="filter__input visually-hidden"
+    name="filter"
+    ${isChecked ? `checked` : ``}
+  />
+  <label for="filter__${year}" class="filter__label">
+    ${year} <span class="filter__${year}-count filter__count">(${Object(_data_utils_js__WEBPACK_IMPORTED_MODULE_1__["chooseWordsEndings"])(quantity, [`новость`, `новости`, `новостей`])})</span></label
+  >`
+  );
+};
+
+const createFilterTemplate = (filters) => {
+  const filtersMarkup = filters.map((it) => createFilterMarkup(it, it.checked)).join(`\n`);
+  return `<section class="news-page__filter-container filter container">
+  ${filtersMarkup}
+</section>`;
+};
 class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
-  constructor(data) {
+  constructor(filters) {
     super();
-    this._filterName = data.year;
-    this._href = data.year;
-    this._quantity = data.quantity;
-    this._isActive = data.isActive;
-    this._onFilterClick = this._onFilterClick.bind(this);
-  }
-
-  set onFilter(fn) {
-    this._onFilter = fn;
-  }
-
-  _onFilterClick() {
-    const activeFilter = document.querySelector(`.filter-list__item--active`);
-    if (activeFilter) {
-      this._isActive = false;
-      activeFilter.classList.remove(`.filter-list__item--active`);
-    }
-    this._isActive = !this._isActive;
-    this.unbind();
-    this._activeFilterUpdate();
-    this.bind();
-    return typeof this._onFilter === `function` && this._onFilter();
-  }
-
-  _activeFilterUpdate() {
-    Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["replace"])(this.getTemplate(), this._element);
-  }
-
-  bind() {
-    this._element.addEventListener(`click`, this._onFilterClick);
-  }
-
-  unbind() {
-    this._element.removeEventListener(`click`, this._onFilterClick);
-  }
-
-  update(newQuantity) {
-    this._quantity = newQuantity;
+    this._filters = filters;
   }
   getTemplate() {
-    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год
-    <span class="filter-list__item-count"> - ${Object(_data_utils_js__WEBPACK_IMPORTED_MODULE_2__["chooseWordsEndings"])(this._quantity, [`новость`, `новости`, `новостей`])}</span></a></li>`;
+    return createFilterTemplate(this._filters);
   }
 
-
-}
-
-
-/***/ }),
-
-/***/ "./src/components/news.js":
-/*!********************************!*\
-  !*** ./src/components/news.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return News; });
-/* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
-
-
-class News extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
-  constructor() {
-    super();
-
+  setFilterChangeHandler(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
+      const filterName = getFilterNameByID(evt.target.id);
+      handler(filterName);
+    });
   }
-  getTemplate() {
-    return `<section class="news-page__board"></section>`;
-  }
-
 }
 
 
@@ -300,23 +267,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
 
 
-class Word extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
-  constructor(word) {
-    super();
-    this._word = word;
-    this._wordDate = word.date;
-    this._wordText = word.text;
-    this._wordAuthor = word.author || `djtonik`;
-  }
+const createWordMarkup = (word) => {
+  // const {date, text, author} = word;
+  return `<div class="news__item">
+  <time class="news__date">${word.date}</time>
+  <ul class="news__list">
+  ${Array.from(word.text).map((item) => (`<li>${item}</li>`.trim())).join(``)}
+  </ul>
+  <span class="news__author">${word.author || `djtonik`}</span>
+</div>`;
+};
 
+const createNewsTemplate = (news) => {
+  const newsMarkup = news.map((item) => createWordMarkup(item)).join(`\n`);
+  return `<section class="news-page__board">
+    ${newsMarkup}
+  </section>`;
+};
+
+class Word extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+  constructor(news) {
+    super();
+    this._news = news;
+  }
   getTemplate() {
-    return `<div class="news__item">
-    <time class="news__date">${this._wordDate}</time>
-    <ul class="news__list">
-      ${Array.from(this._wordText).map((text) => (`<li>${text}</li>`.trim())).join(``)}
-    </ul>
-    <span class="news__author">${this._wordAuthor}</span>
-  </div>`;
+    return createNewsTemplate(this._news);
   }
 }
 
@@ -2780,48 +2755,65 @@ let chooseWordsEndings = (number, words) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/menu.js */ "./src/components/menu.js");
-/* harmony import */ var _components_word_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/word.js */ "./src/components/word.js");
-/* harmony import */ var _components_news_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/news.js */ "./src/components/news.js");
-/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./render.js */ "./src/render.js");
-/* harmony import */ var _components_news_filter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/news-filter.js */ "./src/components/news-filter.js");
-/* harmony import */ var _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./data/news-data.js */ "./src/data/news-data.js");
-// import Hello from "./components/hello-page.js";
+/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render.js */ "./src/render.js");
+/* harmony import */ var _news_filter_controller_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./news-filter-controller.js */ "./src/news-filter-controller.js");
+
+// import Word from "./components/word.js";
+// import News from "./components/news.js";
+// import {news as newsData} from "./data/news-data.js";
 
 
+// import {Filter} from "./components/news-filter.js";
 
 
-
-
-
-
-// let helloNode = document.querySelector(`.hello-page`);
 let menuNode = document.querySelector(`.page-header__navigation`);
-let newsNode = document.querySelector(`.news-page`);
-let filterNode = document.querySelector(`.news-page__filter-list`);
+// let newsNode = document.querySelector(`.news-page`);
+let filterNode = document.querySelector(`.news-page__filter`);
+let newsDataNode = document.querySelector(`.news-page`);
 
 const renderMenu = () => {
   const menuElement = new _components_menu_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
-  Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(menuNode, menuElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].AFTERBEGIN);
-};
-// const renderHelloPage = () => {
-//   const helloElement = new Hello();
-//   render(helloNode, helloElement, RenderPosition.BEFOREEND);
-// };
-const renderNewsBlock = () => {
-  const newsBoardElement = new _components_news_js__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(newsNode, newsBoardElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].BEFOREEND);
+  Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(menuNode, menuElement, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].AFTERBEGIN);
 };
 
-const renderNews = (filteredNews) => {
-  let newsDataNode = newsNode.querySelector(`.news-page__board`);
-  for (let oneWord of filteredNews) {
-    const wordElement = new _components_word_js__WEBPACK_IMPORTED_MODULE_1__["default"](oneWord);
-    Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(newsDataNode, wordElement, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].AFTERBEGIN);
-  }
-};
+// const renderNews = (filteredNews) => {
+//   for (let oneWord of filteredNews) {
+//     const wordElement = new Word(oneWord);
+//     render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
+//   }
+// };
+
+renderMenu();
+let filterController = new _news_filter_controller_js__WEBPACK_IMPORTED_MODULE_2__["FilterController"](filterNode, newsDataNode);
+filterController.renderFilters();
+filterController.renderNews();
+
+
+/***/ }),
+
+/***/ "./src/news-filter-controller.js":
+/*!***************************************!*\
+  !*** ./src/news-filter-controller.js ***!
+  \***************************************/
+/*! exports provided: filtersArray, FilterController */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filtersArray", function() { return filtersArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterController", function() { return FilterController; });
+/* harmony import */ var _data_news_data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/news-data.js */ "./src/data/news-data.js");
+/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render.js */ "./src/render.js");
+/* harmony import */ var _components_news_filter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/news-filter.js */ "./src/components/news-filter.js");
+/* harmony import */ var _components_word_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/word.js */ "./src/components/word.js");
+
+
+
+
+
 
 const getFilters = () => {
-  let countedNews = _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"].reduce(function (allNews, word) {
+  let countedNews = _data_news_data_js__WEBPACK_IMPORTED_MODULE_0__["news"].reduce(function (allNews, word) {
     if (word.year in allNews) {
       allNews[word.year]++;
     } else {
@@ -2836,38 +2828,65 @@ const getFilters = () => {
   filters.sort((a, b) => {
     return b.year - a.year;
   });
-  filters[0].isActive = true;
+  filters[0].isChecked = true;
   return filters;
 };
 
 let filtersArray = getFilters();
 
-const filterNews = (filterName, newsArray) => {
-  return newsArray.filter((item) => item.year === filterName);
-};
+class FilterController {
+  constructor(container, newsContainer) {
+    this._container = container;
+    this._newsContainer = newsContainer;
+    this._activeFilter = filtersArray[0];
+    this._filterComponent = null;
+    this._newsComponent = null;
 
-const renderNewsFilter = () => {
-  let filters = getFilters();
-  for (let filter of filters) {
-    const newsFilter = new _components_news_filter_js__WEBPACK_IMPORTED_MODULE_4__["Filter"](filter);
-    Object(_render_js__WEBPACK_IMPORTED_MODULE_3__["render"])(filterNode, newsFilter, _render_js__WEBPACK_IMPORTED_MODULE_3__["RenderPosition"].BEFOREEND);
-
-    newsFilter.onFilter = () => {
-      // let newsDataNode = document.querySelector(`.news-page__board`);
-      const filteredNews = filterNews(filter.year, _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
-      // for (let oneWord of filteredNews) {
-      //   const wordElement = new Word(oneWord);
-      //   render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
-      // }
-      renderNews(filteredNews);
-    };
+    this._onFilterChange = this._onFilterChange.bind(this);
   }
-};
-// renderHelloPage();
-renderMenu();
-renderNewsBlock();
-renderNewsFilter();
-renderNews(filterNews(filtersArray[1].year, _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]), _data_news_data_js__WEBPACK_IMPORTED_MODULE_5__["news"]);
+
+  renderFilters() {
+    const container = this._container;
+    const oldComponent = this._filterComponent;
+    this._filterComponent = new _components_news_filter_js__WEBPACK_IMPORTED_MODULE_2__["Filter"](filtersArray);
+    this._filterComponent.setFilterChangeHandler(this._onFilterChange);
+    const newsContainer = this._newsContainer;
+    let filteredNews = this.getNews();
+    this._newsComponent = new _components_word_js__WEBPACK_IMPORTED_MODULE_3__["default"](filteredNews);
+
+    if (oldComponent) {
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["replace"])(this._filterComponent, oldComponent);
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+    } else {
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(container, this._filterComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+
+    }
+  }
+
+  _onFilterChange(filterName) {
+    this._activeFilter = filterName;
+    this.renderNews();
+  }
+
+  getNews() {
+    let filterName = this._activeFilter;
+    return _data_news_data_js__WEBPACK_IMPORTED_MODULE_0__["news"].filter((item) => item.year === filterName);
+  }
+  renderNews() {
+    const newsContainer = this._newsContainer;
+    const oldNews = this._newsComponent;
+    let filteredNews = this.getNews();
+    this._newsComponent = new _components_word_js__WEBPACK_IMPORTED_MODULE_3__["default"](filteredNews);
+
+    if (oldNews) {
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["remove"])(oldNews);
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+    } else {
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+    }
+  }
+}
 
 
 /***/ }),
