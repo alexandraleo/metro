@@ -1,52 +1,47 @@
 import Component from "../component.js";
-import {replace} from "../render.js";
 import {chooseWordsEndings} from "../data/utils.js";
+
+const FILTER_ID_PREFIX = `filter__`;
+const getFilterNameByID = (id) => {
+  return id.substring(FILTER_ID_PREFIX.length);
+};
+
+const createFilterMarkup = (filter, isChecked) => {
+  const {year, quantity} = filter;
+
+  return (
+    `<input
+    type="radio"
+    id="filter__${year}"
+    class="filter__input visually-hidden"
+    name="filter"
+    ${isChecked ? `checked` : ``}
+  />
+  <label for="filter__${year}" class="filter__label">
+    ${year} <span class="filter__${year}-count filter__count">(${chooseWordsEndings(quantity, [`новость`, `новости`, `новостей`])})</span></label
+  >`
+  );
+};
+
+const createFilterTemplate = (filters) => {
+  const filtersMarkup = filters.map((it) => createFilterMarkup(it, it.checked)).join(`\n`);
+  return `<section class="news-page__filter-container filter container">
+  ${filtersMarkup}
+</section>`;
+};
 export class Filter extends Component {
-  constructor(data) {
+  constructor(filters) {
     super();
-    this._filterName = data.year;
-    this._href = data.year;
-    this._quantity = data.quantity;
-    this._isActive = data.isActive;
-    this._onFilterClick = this._onFilterClick.bind(this);
-  }
-
-  set onFilter(fn) {
-    this._onFilter = fn;
-  }
-
-  _onFilterClick() {
-    const activeFilter = document.querySelector(`.filter-list__item--active`);
-    if (activeFilter) {
-      this._isActive = false;
-      activeFilter.classList.remove(`.filter-list__item--active`);
-    }
-    this._isActive = !this._isActive;
-    this.unbind();
-    this._activeFilterUpdate();
-    this.bind();
-    return typeof this._onFilter === `function` && this._onFilter();
-  }
-
-  _activeFilterUpdate() {
-    replace(this.getTemplate(), this._element);
-  }
-
-  bind() {
-    this._element.addEventListener(`click`, this._onFilterClick);
-  }
-
-  unbind() {
-    this._element.removeEventListener(`click`, this._onFilterClick);
-  }
-
-  update(newQuantity) {
-    this._quantity = newQuantity;
+    this._filters = filters;
   }
   getTemplate() {
-    return `<li><a href="#${this._href}" class="filter-list__item ${this._isActive ? `filter-list__item--active` : ``}">${this._filterName} год
-    <span class="filter-list__item-count"> - ${chooseWordsEndings(this._quantity, [`новость`, `новости`, `новостей`])}</span></a></li>`;
+    return createFilterTemplate(this._filters);
   }
 
-
+  setFilterChangeHandler(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
+      const filterName = getFilterNameByID(evt.target.id);
+      handler(filterName);
+    });
+  }
 }
