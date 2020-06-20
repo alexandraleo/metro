@@ -1,4 +1,4 @@
-export let news = [
+export const news = [
   {
     year: `2020`,
     date: `18 мая 2020 года`,
