@@ -1,7 +1,7 @@
-import {news as newsData} from "./data/news-data.js";
-import {render, replace, remove, RenderPosition} from "./render.js";
-import {Filter} from "./components/news-filter.js";
-import Word from "./components/word.js";
+import {news as newsData} from "../data/news-data.js";
+import {render, replace, remove, RenderPosition} from "../render.js";
+import {Filter} from "../components/news-filter.js";
+import Word from "../components/word.js";
 
 
 const getFilters = () => {

@@ -9,5 +9,5 @@ css/*.css
 node_modules/
 Thumbs.db
 build/
-img/
+images/
 *.vscode
