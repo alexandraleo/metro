@@ -7,6 +7,7 @@ const createWordMarkup = (word) => {
   <ul class="news__list">
   ${Array.from(word.text).map((item) => (`<li>${item}</li>`.trim())).join(``)}
   </ul>
+  <p class="news__announcement">${word.ad || ``}</p>
   <span class="news__author">${word.author || `djtonik`}</span>
 </div>`;
 };
