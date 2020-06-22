@@ -1,6 +1,7 @@
 import Component from '../component.js';
 
 const MENU_LIST = [
+  {index: `Главная`},
   {news: `Новости`},
   {lines: `Линии и станции`},
   {future: `Перспективы`},

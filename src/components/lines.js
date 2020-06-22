@@ -5,7 +5,6 @@ const LINE_ID_PREFIX = `line__`;
 const getLineNameByID = (id) => {
   return id.substring(LINE_ID_PREFIX.length);
 };
-//TODO айдишник не ищется
 
 const createLineMarkup = (line) => {
   // const {name, number} = line;

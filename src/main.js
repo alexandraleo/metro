@@ -28,8 +28,8 @@ const renderMenu = () => {
 // };
 
 renderMenu();
-// let filterController = new FilterController(filterNode, newsDataNode);
-// filterController.renderFilters();
-// filterController.renderNews();
+let filterController = new FilterController(filterNode, newsDataNode);
+filterController.renderFilters();
+filterController.renderNews();
 let linesController = new LinesController(linesNode, linesDataNode);
 linesController.renderLines();
