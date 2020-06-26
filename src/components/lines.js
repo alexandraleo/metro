@@ -5,7 +5,6 @@ const LINE_ID_PREFIX = `line__`;
 const getLineNameByID = (id) => {
   return id.substring(LINE_ID_PREFIX.length);
 };
-//TODO айдишник не ищется
 
 const createLineMarkup = (line) => {
   // const {name, number} = line;
@@ -32,7 +31,7 @@ export class Lines extends Component {
   setFilterChangeHandler(handler) {
     this.getElement().addEventListener(`click`, (evt) => {
       const lineName = getLineNameByID(evt.target.id);
-      console.log(lineName);
+      // console.log(lineName);
       handler(lineName);
     });
   }
