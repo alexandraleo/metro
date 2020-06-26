@@ -52,7 +52,7 @@ input, textarea, keygen, select, button {
   background-color: #555977
 }
 .main {
-  /* width: 260px; */
+  width: 100%;
   margin: 0 auto;
   display: -ms-flexbox;
   display: flex;
@@ -106,30 +106,27 @@ padding-right: 20px;*/
   margin-top: 10px;
 }
 
-.navigation {
+.page-header {
   width: 100%;
   background-color: rgba(255, 255, 255, .85);
   padding: 0px;
   margin-bottom: 10px;
   border-radius: 0 0 5px 5px;
 }
-.navigation-list {
+.page-header__navigation {
+  width: 100%;
   display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-content: stretch;
-  list-style-type: none;
   margin: 0px;
   padding: 15px 5px;
 }
-.navigation-list > li {
-  height: 100%;
-  /* background-color: white; */
-}
-.navigation-list > li > a {
-  display: block;
-  height: 100%;
-  width: 100%;
+
+.menu__label {
   padding: 10px 15px;
   border: 2px solid #555977;
   border-radius: 5px;
@@ -138,6 +135,11 @@ padding-right: 20px;*/
   text-decoration: none;
   color: #555977;
   font-weight: bold;
+  cursor: pointer;
+}
+.menu__input:checked + .menu__label {
+  background-color: #555977;
+  color: #fff;
 }
 
                                       /* Новости */
