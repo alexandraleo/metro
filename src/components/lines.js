@@ -31,7 +31,7 @@ export class Lines extends Component {
   setFilterChangeHandler(handler) {
     this.getElement().addEventListener(`click`, (evt) => {
       const lineName = getLineNameByID(evt.target.id);
-      console.log(lineName);
+      // console.log(lineName);
       handler(lineName);
     });
   }

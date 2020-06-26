@@ -157,7 +157,6 @@ const LINE_ID_PREFIX = `line__`;
 const getLineNameByID = (id) => {
   return id.substring(LINE_ID_PREFIX.length);
 };
-//TODO айдишник не ищется
 
 const createLineMarkup = (line) => {
   // const {name, number} = line;
@@ -184,7 +183,7 @@ class Lines extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
   setFilterChangeHandler(handler) {
     this.getElement().addEventListener(`click`, (evt) => {
       const lineName = getLineNameByID(evt.target.id);
-      console.log(lineName);
+      // console.log(lineName);
       handler(lineName);
     });
   }
@@ -204,42 +203,50 @@ class Lines extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Menu; });
 /* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
+/* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
 
 
-const MENU_LIST = [
-  {news: `Новости`},
-  {lines: `Линии и станции`},
-  {future: `Перспективы`},
-  {objects: `Объекты`},
-  {vagons: `Вагоны`},
-  {noises: `Звуки`},
-  {info: `Информация`},
-  {creativity: `Творчество`}
-];
 
+const MENU_ID_PREFIX = `menu__`;
+const getMenuItemNameByID = (id) => {
+  return id.substring(MENU_ID_PREFIX.length);
+};
+
+const createMenuMarkup = (menuItem) => {
+  return (
+    `<input
+    type="radio"
+    id="menu__${Object.keys(menuItem)[0]}"
+    class="menu__input visually-hidden"
+    name="menu"
+    ${Object.keys(menuItem)[1] ? `checked` : ``}
+  />
+  <label for="menu__${Object.keys(menuItem)[0]}" class="menu__label">
+    ${Object.values(menuItem)[0]}</label>`
+  );
+};
+
+const createMenuTemplate = () => {
+  const menuMarkup = _data_utils_js__WEBPACK_IMPORTED_MODULE_1__["MENU_LIST"].map((it) => createMenuMarkup(it, it.checked)).join(`\n`);
+  return `<nav class="page-header__navigation navigation">  ${menuMarkup}
+</nav>`;
+};
 class Menu extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor() {
     super();
-    // this._onNewsButtonClick = this._onNewsButtonClick.bind(this);
   }
   set onNewsButtonClick(fn) {
     this._onNewsButtonClick = fn;
   }
-  // _onNewsButtonClick() {
-  //   if (typeof this._onNewsButtonClick === `function`) {
-  //     console.log(`News`);
-  //   }
-  // }
-
   getTemplate() {
-    return `<ul class="navigation-list">
-    ${MENU_LIST.map((item) => (`<li><a href="${Object.keys(item)}.html" class="navigation-list--${Object.keys(item)}">${Object.values(item)}</a></li>`.trim())).join(``)}
-    </ul>`;
+    return createMenuTemplate();
   }
-
-  // bind() {
-  //   this._element.querySelector(`.navigation-list--news`).addEventListener(`click`, this._onNewsButtonClick);
-  // }
+  setMenuChangeHandler(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
+      const menuItemName = getMenuItemNameByID(evt.target.id);
+      handler(menuItemName);
+    });
+  }
 }
 
 
@@ -440,6 +447,61 @@ class LinesController {
 
 /***/ }),
 
+/***/ "./src/controllers/menu-controller.js":
+/*!********************************************!*\
+  !*** ./src/controllers/menu-controller.js ***!
+  \********************************************/
+/*! exports provided: MenuController */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuController", function() { return MenuController; });
+/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
+/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/menu.js */ "./src/components/menu.js");
+/* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
+
+
+
+
+let mainNode = document.querySelector(`.main`);
+
+class MenuController {
+  constructor(container) {
+    this._container = container;
+    this._activeMenuItem = Object.keys(_data_utils_js__WEBPACK_IMPORTED_MODULE_2__["MENU_LIST"][0]);
+    this._filterComponent = null;
+
+    this._onMenuItemChange = this._onMenuItemChange.bind(this);
+  }
+
+  renderMenu() {
+    const container = this._container;
+    this._menuComponent = new _components_menu_js__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    this._menuComponent.setMenuChangeHandler(this._onMenuItemChange);
+    Object(_render_js__WEBPACK_IMPORTED_MODULE_0__["render"])(container, this._menuComponent, _render_js__WEBPACK_IMPORTED_MODULE_0__["RenderPosition"].AFTERBEGIN);
+  }
+
+  _onMenuItemChange(menuItemName) {
+    this._activeMenuItem = menuItemName;
+    const classNamePart = `main-page__`;
+    let newClass = classNamePart + this._activeMenuItem;
+    let newPage = document.getElementsByClassName(newClass);
+
+    if (newPage.length !== 0) {
+      for (let child of mainNode.children) {
+        child.classList.add(`visually-hidden`);
+      }
+      for (let item of newPage) {
+        item.classList.remove(`visually-hidden`);
+      }
+    }
+  }
+}
+
+
+/***/ }),
+
 /***/ "./src/controllers/news-filter-controller.js":
 /*!***************************************************!*\
   !*** ./src/controllers/news-filter-controller.js ***!
@@ -554,18 +616,35 @@ const linesData = [
   {
     name: `Кировско-Выборгская`,
     number: 1,
-    idNameName: `lineOne`,
-    about: ``,
-    date: ``,
-    stage: ``
+    idName: `lineOne`,
+    about: `Кировско-Выборгская — первая линия в нашем городе. На этой линии находятся одни из самых красивых станций в мире (участок первой очереди «Автово» — «Площадь Восстания»). Линия является самой длинной в питерском метро (29.6 км), по ней с 16 июня 2004 года ходят восьмивагонные составы. Из-за печально известного "размыва" с 1995 по 2004 год она была разделена на две части: от «Проспекта Ветеранов» до «Лесной» и от «Площади Мужества» до «Девяткина». В 2007 году был полностью закрыт на год вестибюль станции «Владимирская», так как в нём был произведён капитальный ремонт эскалаторов (впервые с 1955 года). Закрывались также «Выборгская» (2015-2016) и «Пушкинская» (2013-2015 годы). Также планировалось закрыть на капитальный ремонт станции «Нарвская» (2008), «Технологический Институт-1» (2015) и «Гражданский Проспект» (в итоге закрытия не состоялись).`,
+    date: `15.11.1955`,
+    open: `Первая очередь КВ1 вступила в строй 15 ноября 1955 года`,
+    stages: [
+      [`ТЧ-4 <> Девяткино`, `Несмотря на то, что «Девяткино» — наземная станция, перегон является подземным, чтобы пропустить поверху пути РЖД. На перегоне расположен перекрёстный съезд и гейт с железной дорогой, который в 2004 году вместе с ликвидацией "Размыва" был разобран за ненадобностью.`],
+      [`Девяткино <> Гражданский Проспект`, `Уклон 48 тысячных для подъёма с глубокого заложения к рампе станции. Вентиляционная сбойка на перегоне частично выполнена новым для СССР методом набрызгбетона в 1978 году.`],
+      [`Гражданский Проспект <> Академическая`, `На перегоне расположен тупик со сбойками на оба перегонных тоннеля и вентиляционный тоннель параллельно II главному пути, совмещённый с ВШ-218. В этом вентиляционном тоннеле впервые в истории Ленинградского метростроения в 1975 году была опробована технология набрызгбетона. Путевое развитие перегона по II пути являло собой перекрёстный съезд, однако при продлении линии он был превращён в обычный для исключения столкновения пассажирских поездов.`],
+      [`Академическая <> Политехническая`, `На перегоне имеются ответвления от главных путей — в советское время планировалось сделать «вилку» от Кировско-Выборгской линии в сторону Тихорецкого проспекта, которая должна была включать в себя станции «Светлановский Проспект», «Проспект Луначарского» и «Проспект Культуры». К сожалению, тогда этим планам не было суждено сбыться, однако в будущем продление этих тоннелей в сторону массового строительства в Буграх.`],
+      [`Политехническая <> Площадь Мужества`, `Разобранный оборотный тоннель. Он активно использовался в течение 9 лет, пока не был побеждён "Размыв". Его построили в спешном порядке при прорыве плывуна, а вывели из эксплуатации в июне 2004 года. В отличие от «Лесной», «Площадь Мужества» изначально планировалась конечной в одной из очередей строительства, поэтому задел под съезд, в отличие от «Лесной», сохранился с 1970-х. Длина перегона — 1096 метров.`],
+      [`Площадь Мужества <> Лесная`, `На этом перегоне и произошёл печально известный "размыв". Ближе к "Лесной" находится разобранный оборотный тоннель (построенный в спешном порядке), который использовался, пока "Лесная" была конечной станцией из-за "размыва". В июне 2004 года его вывели из эксплуатации. На перегоне также есть ответвления — это старые "затопленные" тоннели. Они шли друг над другом, чтобы замораживать меньшую поверхность. Давление одного тоннеля на другой отчасти и было одной из причин аварии. Расположение тоннелей одного над другим, вдобавок, создало сложности при спешном встраивании камер съездов и оборотного тоннеля сначала в 1970-е, а потом и в 1990-е годы. Можно смело говорить о том, что это единственный оборотный тоннель, построенный на значительном уклоне, чего нет ни на одном другом перегоне в Петербурге. Новые тоннели "Размыва" строились очень долго, первый был закончен в июне, а второй — в декабре 2003 года. Перегон торжественно "переоткрыт" 26 июня 2004 года при участии Владимира Путина, Валентины Матвиенко и тогдашнего полпреда в СЗФО Ильи Клебанова.`],
+      [`Выборгская <> Площадь Ленина`, `На перегоне есть два тупика (оба бывшие ПТО) и перекрёстный съезд между ними. Тупики активно использовались до продления линии на север за «Площадью Ленина». Сейчас ПТО не используются, а в тупиках поочерёдно ночуют составы. Также интересно, что перегонный тоннель от «Площади Ленина» к «Выборгской» трижды менял трассировку, отчего сохранилось некоторое количество заброшенных участков тоннелей, превращённых в кладовые.`],
+      [`Чернышевская <> Площадь Восстания`, `Соединительная ветка на линию 3 к станции "Маяковская". Она сделана из бывшего ПТО, в котором демонтировано оборудование, однако оставлена смотровая канава (см. фото 2 и 3).`],
+      [`Площадь Восстания <> Владимирская`, `Один из самых коротких перегонов в Петербурге — примерно 848 метров.`],
+      [`Владимирская <> Пушкинская`, `Галерею бы воткнуть`],
+      [`Пушкинская <> Технологический Институт`, `Если ехать от «Технологического» к «Пушкинской», то справа видна соединительная ветка к линии 2, а затем слева — разобранный путь от платформы «Технологический Институт-1», который использовался в 1955 году, когда поезда прибывали в один зал, а не в два.`],
+      [`Технологический Институт <> Балтийская`, `Если ехать от «Технологического» к «Балтийской», то слева будет ССВ, идущая с линии 2, а если в обратную сторону, то слева будет разобранный путь к платформе «Технологический Институт-1» для прибытия поездов КВЛ в один зал «Технологического Института».`],
+      [`Нарвская <> Кировский Завод`, `Тоннель диаметром не 5,5, а 6 метров (вследствие этого, обратите внимание, банкетка в тоннеле отсутствует)`],
+      [`Автово <> Ленинский Проспект`, `Перегон частично строился открытым способом. Сразу после станции «Автово» есть два пути, которые ведут в депо «Автово» и депо «Дачное». Раньше они также вели к станции «Дачное», которая была выведена из эксплуатации. Депо имеют общий гейт с железной дорогой для получения нового подвижного состава с завода.`],
+      [`Южнее станции «Проспект Ветеранов»`, `Четыре(!) тупика и перекрёстный съезд. Два «средних» тупика объединены в двухпутном тоннеле (фото 1 и 2). Между средними тупиками имеется служебная платформа для машинистов (фото 4 и 5). В будущем, при продлении линии крайние тупики будут продлены в Пулково (фото 3).`]]
   },
+  // TODO воткнуть галерею
   {
     name: `Московско-Петроградская`,
     number: 2,
     idName: `lineTwo`,
     about: ``,
     date: ``,
-    stage: ``
+    stages: ``
   },
   {
     name: `Невско-Василеостровская`,
@@ -573,7 +652,7 @@ const linesData = [
     idName: `lineThree`,
     about: ``,
     date: ``,
-    stage: ``
+    stages: ``
   },
   {
     name: `Лахтинско-Правобережная`,
@@ -581,7 +660,7 @@ const linesData = [
     idName: `lineFour`,
     about: ``,
     date: ``,
-    stage: ``
+    stages: ``
   },
   {
     name: `Фрунзенско-Приморская`,
@@ -3183,12 +3262,26 @@ const news = [
 /*!***************************!*\
   !*** ./src/data/utils.js ***!
   \***************************/
-/*! exports provided: chooseWordsEndings */
+/*! exports provided: MENU_LIST, chooseWordsEndings */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MENU_LIST", function() { return MENU_LIST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "chooseWordsEndings", function() { return chooseWordsEndings; });
+const MENU_LIST = [
+  {index: `Главная`, isChecked: true},
+  {news: `Новости`},
+  {lines: `Линии и станции`},
+  {future: `Перспективы`},
+  {objects: `Объекты`},
+  {vagons: `Вагоны`},
+  {noises: `Звуки`},
+  {info: `Информация`},
+  {creativity: `Творчество`}
+];
+
+
 let chooseWordsEndings = (number, words) => {
   const cases = [2, 0, 1, 1, 1, 2];
   const wordIndex = (number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5];
@@ -3207,44 +3300,25 @@ let chooseWordsEndings = (number, words) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/menu.js */ "./src/components/menu.js");
-/* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render.js */ "./src/render.js");
-/* harmony import */ var _controllers_news_filter_controller_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/news-filter-controller.js */ "./src/controllers/news-filter-controller.js");
-/* harmony import */ var _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./controllers/lines-controller.js */ "./src/controllers/lines-controller.js");
+/* harmony import */ var _controllers_news_filter_controller_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/news-filter-controller.js */ "./src/controllers/news-filter-controller.js");
+/* harmony import */ var _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/lines-controller.js */ "./src/controllers/lines-controller.js");
+/* harmony import */ var _controllers_menu_controller_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/menu-controller.js */ "./src/controllers/menu-controller.js");
 
 
 
 
-// import Word from "./components/word.js";
-// import News from "./components/news.js";
-// import {news as newsData} from "./data/news-data.js";
-// import {Filter} from "./components/news-filter.js";
-
-
-let menuNode = document.querySelector(`.page-header__navigation`);
-// let newsNode = document.querySelector(`.news-page`);
+let menuNode = document.querySelector(`.page-header`);
 let filterNode = document.querySelector(`.news-page__filter`);
 let newsDataNode = document.querySelector(`.news-page`);
 let linesNode = document.querySelector(`.lines-page__list`);
 let linesDataNode = document.querySelector(`.lines-page__about`);
 
-const renderMenu = () => {
-  const menuElement = new _components_menu_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
-  Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(menuNode, menuElement, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].AFTERBEGIN);
-};
-
-// const renderNews = (filteredNews) => {
-//   for (let oneWord of filteredNews) {
-//     const wordElement = new Word(oneWord);
-//     render(newsDataNode, wordElement, RenderPosition.AFTERBEGIN);
-//   }
-// };
-
-renderMenu();
-// let filterController = new FilterController(filterNode, newsDataNode);
-// filterController.renderFilters();
-// filterController.renderNews();
-let linesController = new _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_3__["LinesController"](linesNode, linesDataNode);
+let menuController = new _controllers_menu_controller_js__WEBPACK_IMPORTED_MODULE_2__["MenuController"](menuNode);
+menuController.renderMenu();
+let filterController = new _controllers_news_filter_controller_js__WEBPACK_IMPORTED_MODULE_0__["FilterController"](filterNode, newsDataNode);
+filterController.renderFilters();
+filterController.renderNews();
+let linesController = new _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_1__["LinesController"](linesNode, linesDataNode);
 linesController.renderLines();
 
 
