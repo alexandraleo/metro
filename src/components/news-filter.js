@@ -25,9 +25,9 @@ const createFilterMarkup = (filter, isChecked) => {
 
 const createFilterTemplate = (filters) => {
   const filtersMarkup = filters.map((it) => createFilterMarkup(it, it.checked)).join(`\n`);
-  return `<section class="news-page__filter-container filter container">
+  return `<nav class="news-page__filter-container filter container">
   ${filtersMarkup}
-</section>`;
+</nav>`;
 };
 export class Filter extends Component {
   constructor(filters) {

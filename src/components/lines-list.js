@@ -9,17 +9,25 @@ const getLineNameByID = (id) => {
 const createLineMarkup = (line) => {
   // const {name, number} = line;
   return (
-    `<li class="line__${line.idName} ${line.isActive ? `line--active` : ``}"><a href="#${line.idName}">Линия ${line.number} «${line.name}»</a></li>`
+    `<input
+    type="radio"
+    id="line__${line.idName}"
+    class="line__input visually-hidden"
+    name="lines"
+    ${line.isChecked ? `checked` : ``}
+  />
+  <label for="line__${line.idName}" class="line__label">
+  Линия ${line.number} «${line.name}»</label>`
   );
 };
 
 const createLineTemplate = (lines) => {
-  const linesMarkup = lines.map((it) => createLineMarkup(it, it.isActive)).join(`\n`);
-  return `<ul class="lines-list__container">
+  const linesMarkup = lines.map((it) => createLineMarkup(it, it.checked)).join(`\n`);
+  return `<nav class="lines-page__list container">
   ${linesMarkup}
-</ul>`;
+</nav>`;
 };
-export class Lines extends Component {
+export default class Lines extends Component {
   constructor(lines) {
     super();
     this._lines = lines;
@@ -28,10 +36,9 @@ export class Lines extends Component {
     return createLineTemplate(this._lines);
   }
 
-  setFilterChangeHandler(handler) {
-    this.getElement().addEventListener(`click`, (evt) => {
+  setLineChangeHandler(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
       const lineName = getLineNameByID(evt.target.id);
-      // console.log(lineName);
       handler(lineName);
     });
   }

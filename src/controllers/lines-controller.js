@@ -1,69 +1,63 @@
 import {linesData} from "../data/lines-data.js";
 import {render, replace, RenderPosition} from "../render.js";
-import {Lines} from "../components/lines.js";
-// import Word from "../components/word.js";
+import Lines from "../components/lines-list.js";
+import LineInfo from "../components/line-info.js";
 
+let linesAboutNode = document.querySelector(`.lines-page__about`);
 
 const getLines = () => {
   let lines = [];
   for (let value of Object.values(linesData)) {
     lines.push({name: value.name, number: value.number, idName: value.idName});
   }
-  lines[0].isChecked = true;
   return lines;
 };
 
-export let LinesArray = getLines();
-// console.log(LinesArray);
-
-export class LinesController {
-  constructor(container, linesContainer) {
-    this._container = container;
-    this._newsContainer = linesContainer;
-    this._activeLine = LinesArray[0];
-    this._filterComponent = null;
-    this._newsComponent = null;
+let linesArray = getLines();
+export default class LinesController {
+  constructor(linesContainer, lineInfoContainer) {
+    this._linesListcontainer = linesContainer;
+    this._lineInfoContainer = lineInfoContainer;
+    this._activeLine = null;
+    this._lineListComponent = null;
+    this._lineInfoComponent = null;
 
     this._onLineChange = this._onLineChange.bind(this);
   }
 
-  renderLines() {
-    const container = this._container;
-    const oldComponent = this._filterComponent;
-    this._filterComponent = new Lines(LinesArray);
-    this._filterComponent.setFilterChangeHandler(this._onLineChange);
+  renderLinesList() {
+    const container = this._linesListcontainer;
+    const oldComponent = this._lineListComponent;
+    this._lineListComponent = new Lines(linesArray);
+    this._lineListComponent.setLineChangeHandler(this._onLineChange);
 
     if (oldComponent) {
-      replace(this._filterComponent, oldComponent);
-      // render(linesContainer, this._newsComponent, RenderPosition.BEFOREEND);
+      replace(this._lineListComponent, oldComponent);
     } else {
-      render(container, this._filterComponent, RenderPosition.BEFOREEND);
-      // render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-
+      render(container, this._lineListComponent, RenderPosition.AFTERBEGIN);
     }
   }
 
   _onLineChange(lineName) {
     this._activeLine = lineName;
-    // console.log(this._activeLine);
-    // this.renderNews();
+    this.renderLineInfo();
   }
 
-  // getNews() {
-  //   let filterName = this._activeFilter;
-  //   return linesData.filter((item) => item.name === filterName);
-  // }
-  // renderNews() {
-  //   const newsContainer = this._newsContainer;
-  //   const oldNews = this._newsComponent;
-  //   let filteredNews = this.getNews();
-  //   this._newsComponent = new Word(filteredNews);
-
-  //   if (oldNews) {
-  //     remove(oldNews);
-  //     render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-  //   } else {
-  //     render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-  //   }
-  // }
+  getLineInfo() {
+    return linesData.filter((item) => item.idName === this._activeLine);
+  }
+  renderLineInfo() {
+    const lineInfoContainer = this._lineInfoContainer;
+    const oldInfo = this._lineInfoComponent;
+    let checkedLineInfo = this.getLineInfo();
+    this._lineInfoComponent = new LineInfo(checkedLineInfo);
+    linesAboutNode.innerHTML = null;
+    if (oldInfo) {
+      // remove(oldInfo);
+      render(lineInfoContainer, this._lineInfoComponent, RenderPosition.BEFOREEND);
+    } else {
+      render(lineInfoContainer, this._lineInfoComponent, RenderPosition.BEFOREEND);
+    }
+    // TODO переделать на реплейс
+  }
 }

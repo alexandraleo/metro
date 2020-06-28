@@ -139,16 +139,65 @@ class Component {
 
 /***/ }),
 
-/***/ "./src/components/lines.js":
-/*!*********************************!*\
-  !*** ./src/components/lines.js ***!
-  \*********************************/
-/*! exports provided: Lines */
+/***/ "./src/components/line-info.js":
+/*!*************************************!*\
+  !*** ./src/components/line-info.js ***!
+  \*************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lines", function() { return Lines; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LineInfo; });
+/* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
+
+
+const stagesMarkup = (lineInfo) => {
+  let infoMap = new Map(lineInfo[`stages`]);
+  let lineInfoArr = [];
+
+  for (let [key, value] of infoMap.entries()) {
+    lineInfoArr.push(`<h3>${key}</h3>
+  <p>${value}</p>`);
+  }
+  return lineInfoArr;
+};
+
+const createInfoTemplate = (lineInfo) => {
+  return `<section class="lines-page__line-info">
+    <h1 class="lines-page__header">Линия ${lineInfo.number} - "${lineInfo.name}"</h1>
+    <time class="lines-page__open-date visually-hidden">${lineInfo.date}</time>
+    <p>${lineInfo.open}</p>
+    <p>${lineInfo.about}</p>
+    <div>
+      ${stagesMarkup(lineInfo).join(``)}
+    </div>
+  </section>`;
+};
+
+class LineInfo extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+  constructor(lineInfo) {
+    super();
+    this._lineInfo = lineInfo[0];
+  }
+  getTemplate() {
+    return createInfoTemplate(this._lineInfo);
+  }
+}
+
+
+/***/ }),
+
+/***/ "./src/components/lines-list.js":
+/*!**************************************!*\
+  !*** ./src/components/lines-list.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Lines; });
 /* harmony import */ var _component_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../component.js */ "./src/component.js");
 
 // import {chooseWordsEndings} from "../data/utils.js";
@@ -161,15 +210,23 @@ const getLineNameByID = (id) => {
 const createLineMarkup = (line) => {
   // const {name, number} = line;
   return (
-    `<li class="line__${line.idName} ${line.isActive ? `line--active` : ``}"><a href="#${line.idName}">Линия ${line.number} «${line.name}»</a></li>`
+    `<input
+    type="radio"
+    id="line__${line.idName}"
+    class="line__input visually-hidden"
+    name="lines"
+    ${line.isChecked ? `checked` : ``}
+  />
+  <label for="line__${line.idName}" class="line__label">
+  Линия ${line.number} «${line.name}»</label>`
   );
 };
 
 const createLineTemplate = (lines) => {
-  const linesMarkup = lines.map((it) => createLineMarkup(it, it.isActive)).join(`\n`);
-  return `<ul class="lines-list__container">
+  const linesMarkup = lines.map((it) => createLineMarkup(it, it.checked)).join(`\n`);
+  return `<nav class="lines-page__list container">
   ${linesMarkup}
-</ul>`;
+</nav>`;
 };
 class Lines extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor(lines) {
@@ -180,10 +237,9 @@ class Lines extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
     return createLineTemplate(this._lines);
   }
 
-  setFilterChangeHandler(handler) {
-    this.getElement().addEventListener(`click`, (evt) => {
+  setLineChangeHandler(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
       const lineName = getLineNameByID(evt.target.id);
-      // console.log(lineName);
       handler(lineName);
     });
   }
@@ -291,9 +347,9 @@ const createFilterMarkup = (filter, isChecked) => {
 
 const createFilterTemplate = (filters) => {
   const filtersMarkup = filters.map((it) => createFilterMarkup(it, it.checked)).join(`\n`);
-  return `<section class="news-page__filter-container filter container">
+  return `<nav class="news-page__filter-container filter container">
   ${filtersMarkup}
-</section>`;
+</nav>`;
 };
 class Filter extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
   constructor(filters) {
@@ -364,84 +420,78 @@ class Word extends _component_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
 /*!*********************************************!*\
   !*** ./src/controllers/lines-controller.js ***!
   \*********************************************/
-/*! exports provided: LinesArray, LinesController */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LinesArray", function() { return LinesArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LinesController", function() { return LinesController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LinesController; });
 /* harmony import */ var _data_lines_data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/lines-data.js */ "./src/data/lines-data.js");
 /* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
-/* harmony import */ var _components_lines_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/lines.js */ "./src/components/lines.js");
+/* harmony import */ var _components_lines_list_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/lines-list.js */ "./src/components/lines-list.js");
+/* harmony import */ var _components_line_info_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/line-info.js */ "./src/components/line-info.js");
 
 
 
-// import Word from "../components/word.js";
 
+
+let linesAboutNode = document.querySelector(`.lines-page__about`);
 
 const getLines = () => {
   let lines = [];
   for (let value of Object.values(_data_lines_data_js__WEBPACK_IMPORTED_MODULE_0__["linesData"])) {
     lines.push({name: value.name, number: value.number, idName: value.idName});
   }
-  lines[0].isChecked = true;
   return lines;
 };
 
-let LinesArray = getLines();
-// console.log(LinesArray);
-
+let linesArray = getLines();
 class LinesController {
-  constructor(container, linesContainer) {
-    this._container = container;
-    this._newsContainer = linesContainer;
-    this._activeLine = LinesArray[0];
-    this._filterComponent = null;
-    this._newsComponent = null;
+  constructor(linesContainer, lineInfoContainer) {
+    this._linesListcontainer = linesContainer;
+    this._lineInfoContainer = lineInfoContainer;
+    this._activeLine = null;
+    this._lineListComponent = null;
+    this._lineInfoComponent = null;
 
     this._onLineChange = this._onLineChange.bind(this);
   }
 
-  renderLines() {
-    const container = this._container;
-    const oldComponent = this._filterComponent;
-    this._filterComponent = new _components_lines_js__WEBPACK_IMPORTED_MODULE_2__["Lines"](LinesArray);
-    this._filterComponent.setFilterChangeHandler(this._onLineChange);
+  renderLinesList() {
+    const container = this._linesListcontainer;
+    const oldComponent = this._lineListComponent;
+    this._lineListComponent = new _components_lines_list_js__WEBPACK_IMPORTED_MODULE_2__["default"](linesArray);
+    this._lineListComponent.setLineChangeHandler(this._onLineChange);
 
     if (oldComponent) {
-      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["replace"])(this._filterComponent, oldComponent);
-      // render(linesContainer, this._newsComponent, RenderPosition.BEFOREEND);
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["replace"])(this._lineListComponent, oldComponent);
     } else {
-      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(container, this._filterComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
-      // render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(container, this._lineListComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].AFTERBEGIN);
     }
   }
 
   _onLineChange(lineName) {
     this._activeLine = lineName;
-    // console.log(this._activeLine);
-    // this.renderNews();
+    this.renderLineInfo();
   }
 
-  // getNews() {
-  //   let filterName = this._activeFilter;
-  //   return linesData.filter((item) => item.name === filterName);
-  // }
-  // renderNews() {
-  //   const newsContainer = this._newsContainer;
-  //   const oldNews = this._newsComponent;
-  //   let filteredNews = this.getNews();
-  //   this._newsComponent = new Word(filteredNews);
-
-  //   if (oldNews) {
-  //     remove(oldNews);
-  //     render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-  //   } else {
-  //     render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
-  //   }
-  // }
+  getLineInfo() {
+    return _data_lines_data_js__WEBPACK_IMPORTED_MODULE_0__["linesData"].filter((item) => item.idName === this._activeLine);
+  }
+  renderLineInfo() {
+    const lineInfoContainer = this._lineInfoContainer;
+    const oldInfo = this._lineInfoComponent;
+    let checkedLineInfo = this.getLineInfo();
+    this._lineInfoComponent = new _components_line_info_js__WEBPACK_IMPORTED_MODULE_3__["default"](checkedLineInfo);
+    linesAboutNode.innerHTML = null;
+    if (oldInfo) {
+      // remove(oldInfo);
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(lineInfoContainer, this._lineInfoComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+    } else {
+      Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(lineInfoContainer, this._lineInfoComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+    }
+    // TODO переделать на реплейс
+  }
 }
 
 
@@ -451,12 +501,12 @@ class LinesController {
 /*!********************************************!*\
   !*** ./src/controllers/menu-controller.js ***!
   \********************************************/
-/*! exports provided: MenuController */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuController", function() { return MenuController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MenuController; });
 /* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
 /* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/menu.js */ "./src/components/menu.js");
 /* harmony import */ var _data_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/utils.js */ "./src/data/utils.js");
@@ -506,13 +556,12 @@ class MenuController {
 /*!***************************************************!*\
   !*** ./src/controllers/news-filter-controller.js ***!
   \***************************************************/
-/*! exports provided: filtersArray, FilterController */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filtersArray", function() { return filtersArray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterController", function() { return FilterController; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FilterController; });
 /* harmony import */ var _data_news_data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/news-data.js */ "./src/data/news-data.js");
 /* harmony import */ var _render_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../render.js */ "./src/render.js");
 /* harmony import */ var _components_news_filter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/news-filter.js */ "./src/components/news-filter.js");
@@ -617,7 +666,7 @@ const linesData = [
     name: `Кировско-Выборгская`,
     number: 1,
     idName: `lineOne`,
-    about: `Кировско-Выборгская — первая линия в нашем городе. На этой линии находятся одни из самых красивых станций в мире (участок первой очереди «Автово» — «Площадь Восстания»). Линия является самой длинной в питерском метро (29.6 км), по ней с 16 июня 2004 года ходят восьмивагонные составы. Из-за печально известного "размыва" с 1995 по 2004 год она была разделена на две части: от «Проспекта Ветеранов» до «Лесной» и от «Площади Мужества» до «Девяткина». В 2007 году был полностью закрыт на год вестибюль станции «Владимирская», так как в нём был произведён капитальный ремонт эскалаторов (впервые с 1955 года). Закрывались также «Выборгская» (2015-2016) и «Пушкинская» (2013-2015 годы). Также планировалось закрыть на капитальный ремонт станции «Нарвская» (2008), «Технологический Институт-1» (2015) и «Гражданский Проспект» (в итоге закрытия не состоялись).`,
+    about: `Кировско-Выборгская — первая линия в нашем городе. На этой линии находятся одни из самых красивых станций в мире (участок первой очереди «Автово» — «Площадь Восстания»). Линия является самой длинной в питерском метро (29.6 км), по ней с 16 июня 2004 года ходят восьмивагонные составы. Из-за печально известного "размыва" с 1995 по 2004 год она была разделена на две части: от «Проспекта Ветеранов» до «Лесной» и от «Площади Мужества» до «Девяткина». В 2007 году был полностью закрыт на год вестибюль станции «Владимирская», так как в нём был произведён капитальный ремонт эскалаторов (впервые с 1955 года). Закрывались также «Выборгская» (2015-2016) и «Пушкинская» (2013-2015 годы). Также планировалось закрыть на капитальный ремонт станции «Нарвская» (2008), «Технологический Институт-1» (2015) и «Гражданский Проспект» <strong style="color:red;">(в итоге закрытия не состоялись)</strong>.`,
     date: `15.11.1955`,
     open: `Первая очередь КВ1 вступила в строй 15 ноября 1955 года`,
     stages: [
@@ -3310,16 +3359,16 @@ __webpack_require__.r(__webpack_exports__);
 let menuNode = document.querySelector(`.page-header`);
 let filterNode = document.querySelector(`.news-page__filter`);
 let newsDataNode = document.querySelector(`.news-page`);
-let linesNode = document.querySelector(`.lines-page__list`);
+let linesNode = document.querySelector(`.main-page__lines`);
 let linesDataNode = document.querySelector(`.lines-page__about`);
 
-let menuController = new _controllers_menu_controller_js__WEBPACK_IMPORTED_MODULE_2__["MenuController"](menuNode);
+let menuController = new _controllers_menu_controller_js__WEBPACK_IMPORTED_MODULE_2__["default"](menuNode);
 menuController.renderMenu();
-let filterController = new _controllers_news_filter_controller_js__WEBPACK_IMPORTED_MODULE_0__["FilterController"](filterNode, newsDataNode);
+let filterController = new _controllers_news_filter_controller_js__WEBPACK_IMPORTED_MODULE_0__["default"](filterNode, newsDataNode);
 filterController.renderFilters();
 filterController.renderNews();
-let linesController = new _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_1__["LinesController"](linesNode, linesDataNode);
-linesController.renderLines();
+let linesController = new _controllers_lines_controller_js__WEBPACK_IMPORTED_MODULE_1__["default"](linesNode, linesDataNode);
+linesController.renderLinesList();
 
 
 /***/ }),

@@ -4,7 +4,7 @@ import {MENU_LIST as menuList} from "../data/utils.js";
 
 let mainNode = document.querySelector(`.main`);
 
-export class MenuController {
+export default class MenuController {
   constructor(container) {
     this._container = container;
     this._activeMenuItem = Object.keys(menuList[0]);
