@@ -24,9 +24,9 @@ const getFilters = () => {
   return filters;
 };
 
-export let filtersArray = getFilters();
+let filtersArray = getFilters();
 
-export class FilterController {
+export default class FilterController {
   constructor(container, newsContainer) {
     this._container = container;
     this._newsContainer = newsContainer;
