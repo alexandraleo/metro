@@ -17,7 +17,7 @@ const createLineMarkup = (line) => {
     ${line.isChecked ? `checked` : ``}
   />
   <label for="line__${line.idName}" class="line__label">
-  Линия ${line.number} «${line.name}»</label>`
+  Линия ${line.number} </br> «${line.name}»</label>`
   );
 };
 

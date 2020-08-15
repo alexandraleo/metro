@@ -30,7 +30,7 @@ export default class FilterController {
   constructor(container, newsContainer) {
     this._container = container;
     this._newsContainer = newsContainer;
-    this._activeFilter = filtersArray[0];
+    this._activeFilter = filtersArray[0].year;
     this._filterComponent = null;
     this._newsComponent = null;
 
