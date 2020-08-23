@@ -523,8 +523,10 @@ class LinesController {
     if (oldInfo) {
       // remove(oldInfo);
       Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(lineInfoContainer, this._lineInfoComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+      lineInfoContainer.scrollIntoView({behavior: `smooth`});
     } else {
       Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(lineInfoContainer, this._lineInfoComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+      lineInfoContainer.scrollIntoView({behavior: `smooth`});
     }
     // TODO переделать на реплейс
   }
@@ -678,8 +680,10 @@ class FilterController {
     if (oldNews) {
       Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["remove"])(oldNews);
       Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+      newsContainer.scrollIntoView({behavior: `smooth`});
     } else {
       Object(_render_js__WEBPACK_IMPORTED_MODULE_1__["render"])(newsContainer, this._newsComponent, _render_js__WEBPACK_IMPORTED_MODULE_1__["RenderPosition"].BEFOREEND);
+      newsContainer.scrollIntoView({behavior: `smooth`});
     }
   }
 }

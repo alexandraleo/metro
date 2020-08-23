@@ -55,8 +55,10 @@ export default class LinesController {
     if (oldInfo) {
       // remove(oldInfo);
       render(lineInfoContainer, this._lineInfoComponent, RenderPosition.BEFOREEND);
+      lineInfoContainer.scrollIntoView({behavior: `smooth`});
     } else {
       render(lineInfoContainer, this._lineInfoComponent, RenderPosition.BEFOREEND);
+      lineInfoContainer.scrollIntoView({behavior: `smooth`});
     }
     // TODO переделать на реплейс
   }

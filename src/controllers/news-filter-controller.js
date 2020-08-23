@@ -74,8 +74,10 @@ export default class FilterController {
     if (oldNews) {
       remove(oldNews);
       render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
+      newsContainer.scrollIntoView({behavior: `smooth`});
     } else {
       render(newsContainer, this._newsComponent, RenderPosition.BEFOREEND);
+      newsContainer.scrollIntoView({behavior: `smooth`});
     }
   }
 }
